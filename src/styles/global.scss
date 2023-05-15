@@ -1,0 +1,32 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.btn {
+  width: 145px;
+  height: 42px;
+  border: none;
+  border-radius: 25px;
+
+  &-primary {
+    background-color: $secondary;
+    color: $white;
+  }
+}
