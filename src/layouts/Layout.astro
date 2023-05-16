@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.scss";
 
 export interface Props {
@@ -22,6 +23,7 @@ const { title = "Amanda Prokop RMT" } = Astro.props;
     <Header />
     <slot />
     <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
 <style is:global>
