@@ -4,7 +4,6 @@ export interface Props {
   page?:string;
 }
 import "../styles/hero.scss";
-import logo from "/assets/APPrimaryOrange.png";
 import headerBg from "/assets/test.jpg";
 
 const {title, page} = Astro.props
@@ -24,8 +23,26 @@ const homepage = page === "homepage" ? true : false
     {homepage && (
       <>
       <div class="logo">
-      picture
-      <img src={logo} alt="hero logo" />
+      <picture>
+        <source 
+        //   type="image/avif"
+        //   srcset="
+        //   /assets/avif/APPrimaryOrange.avif?width=100 100w,
+        //   /assets/avif/APPrimaryOrange.avif?width=200 200w,
+        //   /assets/avif/APPrimaryOrange.avif?width=400 400w,
+        //   /assets/avif/APPrimaryOrange.avif?width=800 800w,
+        //   "
+        />
+        <img 
+          src="/assets/webp/APPrimaryOrange.webp" 
+          alt="hero logo" 
+          role="presentation" 
+          fetchpriority="high" 
+          decoding="async" 
+          
+          />
+    
+      </picture>
     </div>
       <button class="btn btn-primary">BOOK NOW</button>
       </>
