@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Glafton, Arial, Helvetica, sans-serif';
+  src: url('../../public/assets/fonts/Glafton/GlaftonFont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+
 $primary: #98cccc;
 $secondary: #f26d48;
 $third: #ba9d2f;
@@ -5,3 +15,5 @@ $orange: #fbb03e;
 $background: #f8ebdd;
 $black: #000;
 $white: #fff;
+$primary-font: "Glafton", Arial, Helvetica, sans-serif;
+$secondary-font: "Montserrat", Arial, Helvetica, sans-serif;
