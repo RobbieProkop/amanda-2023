@@ -4,14 +4,24 @@ export interface Props {
   page?:string;
 }
 import "../styles/hero.scss";
+import logo from "../../public/assets/APPrimaryOrange.png";
 
 const {title, page} = Astro.props
 const homepage = page === "homepage" ? true : false
 ---
-<section>
+<section class="hero">
   <div class="container">
     <div class="background-image"></div>
     <h1 class={homepage ? "hidden" : ""}>{title}</h1>
+
+    {homepage && (
+      <>
+      <div class="logo">
+      <img src={logo} alt="hero logo" />
+    </div>
+      <button class="btn btn-primary">BOOK NOW</button>
+      </>
+    )}
   </div>
 </section>
 
