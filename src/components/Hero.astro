@@ -1,0 +1,17 @@
+---
+export interface Props {
+  title: string;
+  page?:string;
+}
+import "../styles/hero.scss";
+
+const {title, page} = Astro.props
+const homepage = page === "homepage" ? true : false
+---
+<section>
+  <div class="container">
+    <div class="background-image"></div>
+    <h1 class={homepage ? "hidden" : ""}>{title}</h1>
+  </div>
+</section>
+
