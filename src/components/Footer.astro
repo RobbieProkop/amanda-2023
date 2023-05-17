@@ -1,21 +1,22 @@
 ---
-import logo from "../../public/assets/APmono_orange.png";
-import fb from "../../public/assets/fb.png";
+import logo from "../../public/assets/APPrimaryOrange.png";
 import insta from "../../public/assets/insta.png";
 import linkedin from "../../public/assets/linkedin.png";
+import "../styles/footer.scss";
 ---
 
 <footer class="footer">
   <div class="container">
     <div class="left">
       <p>COPYRIGHT 2023</p>
-      <p><a href="https://dhammadevs.com">DhammDevs</a></p>
+      <p class="dhamma"><a href="https://dhammadevs.com">DhammDevs</a></p>
     </div>
-    <img src={logo} alt="footer logo" />
+    <div class="logo">
+      <img src={logo} alt="footer logo" />
+    </div>
     <div class="socials">
-      <a href=""><img src={fb} alt="instagram" />instagram</a>
-      <a href=""><img src={insta} alt="LinkedIn" />LinkedIn</a>
-      <a href=""><img src={linkedin} alt="facebook" />facebook</a>
+      <a href="https://www.instagram.com/amandalaprokop/"><img src={insta} alt="instagram" /></a>
+      <a href="https://www.linkedin.com/in/amanda-prokop-59145117b/"><img src={linkedin} alt="LinkedIn" /></a>
     </div>
   </div>
 </footer>

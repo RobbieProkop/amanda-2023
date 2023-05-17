@@ -1,0 +1,35 @@
+@import "variables";
+
+.footer {
+  height: 126px;
+  background: $primary;
+  margin-top: auto;
+  .container {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+
+    .dhamma {
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    .logo {
+      max-width: 150px;
+      max-height: 80px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .socials {
+      img {
+        margin: 0 5px;
+      }
+    }
+  }
+}
