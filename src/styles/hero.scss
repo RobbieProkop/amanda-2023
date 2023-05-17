@@ -3,7 +3,7 @@
 }  
 
 .hero {
-  height: 50vh;
+  height: 80vh;
 
   .container {
     height: 100%;
@@ -17,11 +17,26 @@
       text-align: center;
     }
 
+    .header-bg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      img{
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
     .logo{
       img{
         max-width: 39rem;
 
       }
+    }
+
+    .btn{
+      margin-top: 2rem;
     }
   }
 }

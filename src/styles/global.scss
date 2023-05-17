@@ -41,6 +41,14 @@ a {
     background-color: $secondary;
     color: $white;
   }
+  &-secondary {
+    background-color: $primary;
+    color: $white; 
+  }
+  &-third {
+    background-color: $third;
+    color: $white; 
+  }
 }
 
 h1, h2, h3 {

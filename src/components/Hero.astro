@@ -4,7 +4,8 @@ export interface Props {
   page?:string;
 }
 import "../styles/hero.scss";
-import logo from "../../public/assets/APPrimaryOrange.png";
+import logo from "/assets/APPrimaryOrange.png";
+import headerBg from "/assets/test.jpg";
 
 const {title, page} = Astro.props
 const homepage = page === "homepage" ? true : false
@@ -13,10 +14,17 @@ const homepage = page === "homepage" ? true : false
   <div class="container">
     <div class="background-image"></div>
     <h1 class={homepage ? "hidden" : ""}>{title}</h1>
+    <div class="header-bg">
+      <img
+        src={headerBg}
+        alt="header background image"
+        loading="eager"
+      ></img>
 
     {homepage && (
       <>
       <div class="logo">
+      picture
       <img src={logo} alt="hero logo" />
     </div>
       <button class="btn btn-primary">BOOK NOW</button>
