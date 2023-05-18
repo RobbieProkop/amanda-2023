@@ -1,52 +1,52 @@
 ---
 export interface Props {
   title: string;
-  page?:string;
+  page?: string;
+  color: string;
 }
 import "../styles/hero.scss";
 import headerBg from "/assets/test.jpg";
+import logo from "../../public/assets/webp/APPrimaryOrange.webp";
 
-const {title, page} = Astro.props
-const homepage = page === "homepage" ? true : false
+const { title, page, color } = Astro.props;
+const homepage = page === "homepage" ? true : false;
 ---
-<section class="hero">
-  <div class="container">
-    <div class="background-image"></div>
-    <h1 class={homepage ? "hidden" : ""}>{title}</h1>
-    <div class="header-bg">
-      <img
-        src={headerBg}
-        alt="header background image"
-        loading="eager"
-      ></img>
 
-    {homepage && (
-      <>
-      <div class="logo">
-      <picture>
-        <source 
-        //   type="image/avif"
-        //   srcset="
-        //   /assets/avif/APPrimaryOrange.avif?width=100 100w,
-        //   /assets/avif/APPrimaryOrange.avif?width=200 200w,
-        //   /assets/avif/APPrimaryOrange.avif?width=400 400w,
-        //   /assets/avif/APPrimaryOrange.avif?width=800 800w,
-        //   "
-        />
-        <img 
-          src="/assets/webp/APPrimaryOrange.webp" 
-          alt="hero logo" 
-          role="presentation" 
-          fetchpriority="high" 
-          decoding="async" 
-          
-          />
-    
-      </picture>
+<section class="hero">
+  <div class="header-bg">
+    <img src={headerBg} alt="header background image" loading="eager" />
+  </div>
+
+  <div class="container">
+    <div class="logo-container">
+      <h1 class={homepage ? "hidden" : color}>{title}</h1>
+      <!-- <h1 class={color}>{title}</h1> -->
+      {
+        homepage && (
+          <>
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+            /assets/avif/logo.avif?width=100 100w,
+            /assets/avif/logo.avif?width=200 200w,
+            /assets/avif/logo.avif?width=400 400w,
+            /assets/avif/logo.avif?width=800 800w,
+            "
+              />
+              <img
+                src={logo}
+                alt="hero logo"
+                role="presentation"
+                fetchpriority="high"
+                decoding="async"
+                class="logo-image"
+              />
+            </picture>
+            <button class="btn btn-primary">BOOK NOW</button>
+          </>
+        )
+      }
     </div>
-      <button class="btn btn-primary">BOOK NOW</button>
-      </>
-    )}
   </div>
 </section>
-
