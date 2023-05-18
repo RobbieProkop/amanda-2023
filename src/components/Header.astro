@@ -6,10 +6,18 @@ import "../styles/header.scss";
 <header class="header">
   <div><img src={logo} alt="A.P initials logo" /></div>
 
-  <ul class="flex-right">
+  <!-- <ul class="flex-right">
     <li class="item">PRICING + SERVICES</li>
     <li class="item">ABOUT</li>
     <li class="item">CONTACT</li>
-    <button class="item btn btn-primary">BOOK NOW</button>
-  </ul>
+    <button class="item btn btn-primary"><a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank" rel="noreferrer">BOOK NOW</a></button>
+  </ul> -->
+  <div class="menu active">
+    <ul>
+      <a href="/services"><li class="item">PRICING + SERVICES</li></a>
+      <a href="/about"><li class="item">ABOUT</li></a>
+      <a href="/contact"><li class="item">CONTACT</li></a>
+      <a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank" rel="noreferrer"><li class="item">BOOK NOW</li></a>
+    </ul>
+  </div>
 </header>
