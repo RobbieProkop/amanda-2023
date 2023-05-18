@@ -4,6 +4,7 @@
   height: 126px;
   background: $primary;
   margin-top: auto;
+
   .container {
     max-width: 1400px;
     display: flex;
@@ -29,6 +30,19 @@
     .socials {
       img {
         margin: 0 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .footer {
+    height: 15rem;
+    text-align: center;
+    .container {
+      flex-direction: column-reverse;
+      .logo {
+        margin: 10px 0;
       }
     }
   }

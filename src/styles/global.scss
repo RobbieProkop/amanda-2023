@@ -6,21 +6,20 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   height: 100%;
 }
 
 body {
-  
   display: flex;
   flex-direction: column;
   color: #000;
-  font-family:$secondary-font;
+  font-family: $secondary-font;
   font-weight: 400;
   background: $background;
   min-height: 100%;
+  overflow: hidden;
 }
-
 
 ul {
   list-style: none;
@@ -43,21 +42,23 @@ a {
   border-radius: 25px;
   font-family: $secondary-font;
   margin-bottom: 5rem;
-  
+
   &-primary {
     background-color: $secondary;
     color: $white;
   }
   &-secondary {
     background-color: $primary;
-    color: $white; 
+    color: $white;
   }
   &-third {
     background-color: $third;
-    color: $white; 
+    color: $white;
   }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: $primary-font;
 }
