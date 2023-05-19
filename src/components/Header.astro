@@ -1,19 +1,24 @@
 ---
 import logo from "../../public/assets/APmono_orange.png";
 import "../styles/header.scss";
+
+
 ---
 
 <header class="header">
   <div><img src={logo} alt="A.P initials logo" /></div>
 
-  <!-- <ul class="flex-right">
+  <ul id="desktop-menu" class="flex-right">
     <li class="item">PRICING + SERVICES</li>
     <li class="item">ABOUT</li>
     <li class="item">CONTACT</li>
-    <button class="item btn btn-primary"><a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank" rel="noreferrer">BOOK NOW</a></button>
-  </ul> -->
-  <h2 class="close">X</h2>
-  <div class="menu active">
+    <a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank" rel="noreferrer"><button class="item btn btn-primary">BOOK NOW</button></a>
+  </ul>
+
+  <h2 id="open-menu" class="close open hidden">+</h2>
+  <h2 id="close-menu" class="close hidden">X</h2>
+
+  <div id="mobile-menu" class="menu hidden">
     <ul>
       <a href="/services"><li class="item">PRICING + SERVICES</li></a>
       <a href="/about"><li class="item">ABOUT</li></a>
@@ -22,3 +27,38 @@ import "../styles/header.scss";
     </ul>
   </div>
 </header>
+
+<script>
+  console.log(window.innerWidth)
+  const open = document.getElementById("open-menu") as HTMLElement;
+  const close = document.getElementById("close-menu") as HTMLElement;
+  const desktopMenu = document.getElementById("desktop-menu") as HTMLElement;
+  const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
+  
+  //check if the widow gets resized
+  const resize = () => {
+    if (window.innerWidth <= 650){
+      console.log(open.classList)
+      open.classList.remove("hidden")
+      desktopMenu.classList.add("hidden")
+      return
+    }
+    open.classList.add("hidden")
+    desktopMenu.classList.remove("hidden")
+
+  }
+  //call the resize funciton on window resize
+window.addEventListener("resize", () => resize())
+
+
+open.addEventListener("click", () => {
+  open.classList.toggle("active")
+  close.classList.toggle("active")
+  mobileMenu.classList.toggle("hidden")
+})
+close.addEventListener("click", () => {
+  open.classList.toggle("active")
+  close.classList.toggle("active")
+  mobileMenu.classList.toggle("hidden")
+})
+</script>
