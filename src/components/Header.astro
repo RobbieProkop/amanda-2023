@@ -1,8 +1,6 @@
 ---
 import logo from "../../public/assets/APmono_orange.png";
 import "../styles/header.scss";
-
-
 ---
 
 <header class="header">
@@ -12,70 +10,72 @@ import "../styles/header.scss";
     <li class="item">PRICING + SERVICES</li>
     <li class="item">ABOUT</li>
     <li class="item">CONTACT</li>
-    <a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank" rel="noreferrer"><button class="item btn btn-primary">BOOK NOW</button></a>
+    <a
+      href="https://amandaprokop.janeapp.com/#staff_member/1"
+      target="_blank"
+      rel="noreferrer"><button class="item btn btn-primary">BOOK NOW</button></a
+    >
   </ul>
 
-  <div class="menu-wrap">
-    <input id="open-menu" class="toggler hidden" type="checkbox" />
-    <div id="hamberger" class="hamberger hidden"><div></div></div>
+  <input id="open-menu" class="toggler hidden" type="checkbox" />
+  <div id="hamberger" class="hamberger hidden"><div></div></div>
 
-  </div>
-
-
-  <div id="mobile-menu" class="menu hidden">
+  <div id="mobile-menu" class="menu">
     <ul>
-      <a href="/services"><li class="item">PRICING + SERVICES</li></a>
       <a href="/about"><li class="item">ABOUT</li></a>
+      <a href="/services"><li class="item">PRICING + SERVICES</li></a>
       <a href="/contact"><li class="item">CONTACT</li></a>
-      <a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank" rel="noreferrer"><li class="item">BOOK NOW</li></a>
+      <a
+        href="https://amandaprokop.janeapp.com/#staff_member/1"
+        target="_blank"
+        rel="noreferrer"><li class="item">BOOK NOW</li></a
+      >
     </ul>
   </div>
 </header>
 
 <script>
-  console.log(window.innerWidth)
+  console.log(window.innerWidth);
   const open = document.getElementById("open-menu") as HTMLInputElement;
   const hamberger = document.getElementById("hamberger") as HTMLElement;
   const desktopMenu = document.getElementById("desktop-menu") as HTMLElement;
   const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
-  
-  console.log(open.checked)
+
+  console.log(open.checked);
   //check initial window size
-  if (window.innerWidth <= 650){
-    open.classList.remove("hidden")
-    hamberger.classList.remove("hidden")
-    desktopMenu.classList.add("hidden")
+  if (window.innerWidth <= 650) {
+    open.classList.remove("hidden");
+    hamberger.classList.remove("hidden");
+    desktopMenu.classList.add("hidden");
   }
-  
+
   //resize function
   const resize = () => {
-    if (window.innerWidth <= 650){
-      open.classList.remove("hidden")
-      hamberger.classList.remove("hidden")
-      desktopMenu.classList.add("hidden")
-      return
+    if (window.innerWidth <= 650) {
+      open.classList.remove("hidden");
+      hamberger.classList.remove("hidden");
+      desktopMenu.classList.add("hidden");
+      return;
     }
-    open.classList.add("hidden")
+    open.classList.add("hidden");
     // open.checked= false;
-    mobileMenu.classList.add("hidden")
-    hamberger.classList.add("hidden")
-    desktopMenu.classList.remove("hidden")
-
-  }
+    // mobileMenu.classList.add("hidden");
+    hamberger.classList.add("hidden");
+    desktopMenu.classList.remove("hidden");
+  };
   //call the resize funciton on window resize
-  window.addEventListener("resize", () => resize())
-
+  window.addEventListener("resize", () => resize());
 
   open.addEventListener("click", () => {
-    console.log(open.checked)
+    console.log(open.checked);
     // open.classList.toggle("active")
     // hamberger.classList.toggle("active")
-    mobileMenu.classList.toggle("hidden")
-  })
+    // mobileMenu.classList.toggle("hidden");
+  });
   hamberger.addEventListener("click", () => {
-    open.checked=!open.checked;
+    open.checked = !open.checked;
     // open.classList.toggle("active")
     // hamberger.classList.toggle("active")
-    mobileMenu.classList.toggle("hidden")
-  })
+    // mobileMenu.classList.toggle("hidden");
+  });
 </script>
