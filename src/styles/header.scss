@@ -50,9 +50,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 200;
+    z-index: 300;
     cursor: pointer;
-    width: 77px;
+    width: 60px;
     height: 77px;
     padding: 1rem;
     background-color: transparent;
@@ -84,29 +84,26 @@
     }
   }
 
+  
   .toggler:checked + .hamberger > div {
     transform: rotate(135deg);
-  }
 
-  .close{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 200;
-    color: $black;
-    padding: 1rem;
-    transition: rotate ease-in-out 150ms;
+    &::before, &::after{
+      top:0;
+      transform: rotate(90deg);
+    }
 
     &:hover{
-      rotate: -10deg;
-      cursor: pointer;
+      transform: rotate(225deg);
     }
-    
   }
+
+  
+
   .menu {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     height: 50vh;
     width: 100%;
     overflow: hidden;

@@ -15,9 +15,12 @@ import "../styles/header.scss";
     <a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank" rel="noreferrer"><button class="item btn btn-primary">BOOK NOW</button></a>
   </ul>
 
-  <input id="open-menu" class="toggler hidden" type="checkbox"/>
-  <div id="hamberger" class="hamberger hidden"><div></div></div>
-  <h2 id="close-menu" class="close hidden">X</h2>
+  <div class="menu-wrap">
+    <input id="open-menu" class="toggler hidden" type="checkbox" />
+    <div id="hamberger" class="hamberger hidden"><div></div></div>
+
+  </div>
+
 
   <div id="mobile-menu" class="menu hidden">
     <ul>
@@ -36,6 +39,7 @@ import "../styles/header.scss";
   const desktopMenu = document.getElementById("desktop-menu") as HTMLElement;
   const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
   
+  console.log(open.checked)
   //check initial window size
   if (window.innerWidth <= 650){
     open.classList.remove("hidden")
@@ -52,7 +56,7 @@ import "../styles/header.scss";
       return
     }
     open.classList.add("hidden")
-    open.checked= false;
+    // open.checked= false;
     mobileMenu.classList.add("hidden")
     hamberger.classList.add("hidden")
     desktopMenu.classList.remove("hidden")
@@ -63,11 +67,13 @@ import "../styles/header.scss";
 
 
   open.addEventListener("click", () => {
+    console.log(open.checked)
     // open.classList.toggle("active")
     // hamberger.classList.toggle("active")
     mobileMenu.classList.toggle("hidden")
   })
   hamberger.addEventListener("click", () => {
+    open.checked=!open.checked;
     // open.classList.toggle("active")
     // hamberger.classList.toggle("active")
     mobileMenu.classList.toggle("hidden")
