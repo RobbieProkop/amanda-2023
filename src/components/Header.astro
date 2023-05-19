@@ -15,7 +15,8 @@ import "../styles/header.scss";
     <a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank" rel="noreferrer"><button class="item btn btn-primary">BOOK NOW</button></a>
   </ul>
 
-  <h2 id="open-menu" class="close open hidden">+</h2>
+  <input id="open-menu" class="toggler hidden" type="checkbox"/>
+  <div id="hamberger" class="hamberger hidden"><div></div></div>
   <h2 id="close-menu" class="close hidden">X</h2>
 
   <div id="mobile-menu" class="menu hidden">
@@ -30,35 +31,45 @@ import "../styles/header.scss";
 
 <script>
   console.log(window.innerWidth)
-  const open = document.getElementById("open-menu") as HTMLElement;
-  const close = document.getElementById("close-menu") as HTMLElement;
+  const open = document.getElementById("open-menu") as HTMLInputElement;
+  const hamberger = document.getElementById("hamberger") as HTMLElement;
   const desktopMenu = document.getElementById("desktop-menu") as HTMLElement;
   const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
   
-  //check if the widow gets resized
+  //check initial window size
+  if (window.innerWidth <= 650){
+    open.classList.remove("hidden")
+    hamberger.classList.remove("hidden")
+    desktopMenu.classList.add("hidden")
+  }
+  
+  //resize function
   const resize = () => {
     if (window.innerWidth <= 650){
-      console.log(open.classList)
       open.classList.remove("hidden")
+      hamberger.classList.remove("hidden")
       desktopMenu.classList.add("hidden")
       return
     }
     open.classList.add("hidden")
+    open.checked= false;
+    mobileMenu.classList.add("hidden")
+    hamberger.classList.add("hidden")
     desktopMenu.classList.remove("hidden")
 
   }
   //call the resize funciton on window resize
-window.addEventListener("resize", () => resize())
+  window.addEventListener("resize", () => resize())
 
 
-open.addEventListener("click", () => {
-  open.classList.toggle("active")
-  close.classList.toggle("active")
-  mobileMenu.classList.toggle("hidden")
-})
-close.addEventListener("click", () => {
-  open.classList.toggle("active")
-  close.classList.toggle("active")
-  mobileMenu.classList.toggle("hidden")
-})
+  open.addEventListener("click", () => {
+    // open.classList.toggle("active")
+    // hamberger.classList.toggle("active")
+    mobileMenu.classList.toggle("hidden")
+  })
+  hamberger.addEventListener("click", () => {
+    // open.classList.toggle("active")
+    // hamberger.classList.toggle("active")
+    mobileMenu.classList.toggle("hidden")
+  })
 </script>

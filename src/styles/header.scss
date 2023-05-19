@@ -1,11 +1,16 @@
 @import "variables";
 
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
+  @include flex-center();
   background-color: $primary;
   height: 77px;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   z-index: 100;
   position: sticky;
   top: 0;
@@ -16,9 +21,10 @@
   }
 
   .flex-right {
-    display: flex;
+    @include flex-center();
+    
     flex-direction: row;
-    align-items: center;
+    
 
     .item {
       margin: 0 10px;
@@ -29,13 +35,65 @@
     }
   }
 
+  .toggler{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+
+  .hamberger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    cursor: pointer;
+    width: 77px;
+    height: 77px;
+    padding: 1rem;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      position: relative;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition: all 0.4s ease-in-out;
+
+      &:before, 
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: 300;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+      }
+
+      &:after{
+        top:10px
+      }
+    }
+  }
+
+  .toggler:checked + .hamberger > div {
+    transform: rotate(135deg);
+  }
+
   .close{
     position: absolute;
     top: 1rem;
     right: 1rem;
     z-index: 200;
     color: $black;
-    // border: 1px solid $black;
     padding: 1rem;
     transition: rotate ease-in-out 150ms;
 
