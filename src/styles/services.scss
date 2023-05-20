@@ -1,0 +1,22 @@
+@import "variables";
+
+.services {
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2rem;
+    .image {
+      padding: 1rem;
+      width: 377px;
+      img{
+        width: 100%;
+        max-height: 500px;
+      }
+      p {
+        margin: 1rem 0;
+        font-size: 20px;
+      }
+    }
+  }
+}
