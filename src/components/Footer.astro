@@ -1,5 +1,5 @@
 ---
-import logo from "../../public/assets/APPrimaryOrange.png";
+import logo from "../../public/assets/webp/AP_altOrange.webp";
 import insta from "../../public/assets/insta.png";
 import "../styles/footer.scss";
 ---
@@ -13,7 +13,25 @@ import "../styles/footer.scss";
       </p>
     </div>
     <div class="logo">
-      <img src={logo} alt="footer logo" />
+      <picture>
+        <source
+          type="image/avif"
+          srcset="
+      /assets/avif/AP_altOrange.avif?width=100 100w,
+      /assets/avif/AP_altOrange.avif?width=200 200w,
+      /assets/avif/AP_altOrange.avif?width=400 400w,
+      /assets/avif/AP_altOrange.avif?width=800 800w,
+      "
+        />
+        <img
+          src={logo}
+          alt="hero logo"
+          role="presentation"
+          fetchpriority="high"
+          decoding="async"
+          class="logo-image"
+        />
+      </picture>
     </div>
     <div class="socials">
       <a href="https://www.instagram.com/amandalaprokop/"
