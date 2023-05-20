@@ -1,0 +1,19 @@
+.about{
+  padding: 2rem;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2rem;
+
+
+    .image {
+      img{
+        max-width: 377px;
+        max-height: 479px;
+    
+      }
+  }
+}
+
+}
