@@ -1,3 +1,5 @@
+@import "variables";
+
 .about{
   padding: 2rem;
   .container {
@@ -11,8 +13,28 @@
       img{
         max-width: 377px;
         max-height: 479px;
-    
       }
+  }
+  .text {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 850px;
+
+    h2 {
+      color: $third;
+      font-size: 2.2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+      font-size: 20px;
+    }
+
+    .btn {
+      margin-bottom: 0;
+    }
   }
 }
 
