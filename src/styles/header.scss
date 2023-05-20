@@ -16,8 +16,13 @@
   top: 0;
 
   img {
+    position: relative;
     height: 73px;
     width: 73px;
+    z-index: 100;
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   .flex-right {

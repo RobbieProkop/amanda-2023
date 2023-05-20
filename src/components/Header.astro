@@ -1,11 +1,17 @@
 ---
 import logo from "../../public/assets/APmono_orange.png";
 import "../styles/header.scss";
+
+// const homepage = Astro.url.searchParams.get("/")
+
+
+
 ---
 
 <header class="header">
-  <div><img src={logo} alt="A.P initials logo" /></div>
+  <div><a href="/"><img src={logo} alt="A.P initials logo" /></a></div>
 
+  
   <ul id="desktop-menu" class="flex-right">
     <li class="item">PRICING + SERVICES</li>
     <li class="item">ABOUT</li>
@@ -22,6 +28,7 @@ import "../styles/header.scss";
 
   <div id="mobile-menu" class="menu">
     <ul>
+      <a id="home" class="hidden" href="/"><li class="item">HOME</li></a>
       <a href="/about"><li class="item">ABOUT</li></a>
       <a href="/services"><li class="item">PRICING + SERVICES</li></a>
       <a href="/contact"><li class="item">CONTACT</li></a>
@@ -35,13 +42,16 @@ import "../styles/header.scss";
 </header>
 
 <script>
-  console.log(window.innerWidth);
+  const home = document.getElementById("home") as HTMLInputElement;
   const open = document.getElementById("open-menu") as HTMLInputElement;
   const hamberger = document.getElementById("hamberger") as HTMLElement;
   const desktopMenu = document.getElementById("desktop-menu") as HTMLElement;
   const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
 
-  console.log(open.checked);
+  const homepage = window.location.href.split("/")
+  if (homepage[3]){home.classList.remove("hidden")}
+  else {home.classList.add("hidden")}
+
   //check initial window size
   if (window.innerWidth <= 650) {
     open.classList.remove("hidden");
