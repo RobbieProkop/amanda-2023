@@ -1,21 +1,73 @@
 @import "variables";
 
 .services {
-  .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 2rem;
-    .image {
-      padding: 1rem;
-      width: 377px;
-      img{
-        width: 100%;
-        max-height: 500px;
+  background-color: $background-blue;
+  .container {
+    text-align: center;
+    min-height: 80vh;
+    position: relative;
+    h2 {
+      color: $primary-dark;
+    }
+    .button-group {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      inset: 0;
+      z-index: 0;
+
+      .carousel-button {
+        font-size: 4rem;
+        background-color: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.5);
+        z-index: 2;
+        // top:50%;
+        // transform: translateY(-50%);
+        border-radius: 0.25rem;
+        padding: 0 0.5rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
+
+        &.prev {
+          transform: rotate(180deg);
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: #fff;
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+        &:focus {
+          outline: 1px solid #333;
+        }
       }
-      p {
-        margin: 1rem 0;
-        font-size: 20px;
+    }
+
+    .carousel {
+      text-align: left;
+      overflow-x: hidden;
+      z-index: 0;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 33%;
+      align-items: center;
+      justify-items: center;
+      padding-left: 1rem;
+
+      .slide {
+        padding: 2rem;
+        width: 377px;
+        height: 100%;
+        img {
+          width: 100%;
+          max-height: 500px;
+        }
+        p {
+          margin: 1rem 0;
+          font-size: 20px;
+        }
       }
     }
   }

@@ -3,19 +3,15 @@ import logo from "../../public/assets/APmono_orange.png";
 import "../styles/header.scss";
 
 // const homepage = Astro.url.searchParams.get("/")
-
-
-
 ---
 
 <header class="header">
   <div><a href="/"><img src={logo} alt="A.P initials logo" /></a></div>
 
-  
   <ul id="desktop-menu" class="flex-right">
-    <li class="item">PRICING + SERVICES</li>
-    <li class="item">ABOUT</li>
-    <li class="item">CONTACT</li>
+    <a href="/about"><li class="item">ABOUT</li></a>
+    <a href="/services"><li class="item">SERVICES</li></a>
+    <a href="/contact"><li class="item">CONTACT</li></a>
     <a
       href="https://amandaprokop.janeapp.com/#staff_member/1"
       target="_blank"
@@ -30,7 +26,7 @@ import "../styles/header.scss";
     <ul>
       <a id="home" class="hidden" href="/"><li class="item">HOME</li></a>
       <a href="/about"><li class="item">ABOUT</li></a>
-      <a href="/services"><li class="item">PRICING + SERVICES</li></a>
+      <a href="/services"><li class="item">SERVICES</li></a>
       <a href="/contact"><li class="item">CONTACT</li></a>
       <a
         href="https://amandaprokop.janeapp.com/#staff_member/1"
@@ -48,9 +44,12 @@ import "../styles/header.scss";
   const desktopMenu = document.getElementById("desktop-menu") as HTMLElement;
   const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
 
-  const homepage = window.location.href.split("/")
-  if (homepage[3]){home.classList.remove("hidden")}
-  else {home.classList.add("hidden")}
+  const homepage = window.location.href.split("/");
+  if (homepage[3]) {
+    home.classList.remove("hidden");
+  } else {
+    home.classList.add("hidden");
+  }
 
   //check initial window size
   if (window.innerWidth <= 650) {
