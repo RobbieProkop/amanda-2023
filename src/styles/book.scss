@@ -1,0 +1,19 @@
+@import "variables";
+
+.book {
+  background-color: rgba(171, 183, 183, 0.1);
+  .container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4rem auto;
+
+    h3 {
+      font-size: 36px;
+      margin-bottom: 2rem;
+      color: $pink;
+    }
+  }
+}
