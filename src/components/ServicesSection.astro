@@ -1,6 +1,8 @@
 ---
 import "../styles/services.scss";
 import photo from "../../public/assets/yuli.jpg";
+import ServiceCard from "../components/ServiceCard.astro";
+import services from "../servicesArr";
 ---
 
 <section class="services">
@@ -11,7 +13,19 @@ import photo from "../../public/assets/yuli.jpg";
       <button class="carousel-button next">&#10140;</button>
     </div>
     <div class="carousel">
-      <div class="slide">
+      {
+        services.map((service) => {
+          return (
+            <ServiceCard
+              photo={service.photo}
+              text={service.value}
+              title={service.title}
+              id={service.id}
+            />
+          );
+        })
+      }
+      <!-- <div class="slide">
         <img src={photo} alt="" />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -60,7 +74,7 @@ import photo from "../../public/assets/yuli.jpg";
           ipsum dolor sit amet.
         </p>
         <button class="btn btn-secondary">LEARN MORE</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

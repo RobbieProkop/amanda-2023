@@ -2,16 +2,25 @@
 export interface Props {
   photo: string;
   text: string;
-  id: number;
+  title: string;
+  id: string;
 }
 
-const { photo, text, id } = Astro.props;
+const { photo, text, title, id } = Astro.props;
+
+const trimText = (text: string) => {
+  if (text.length > 100) {
+    return text.substring(0, 100) + "...";
+  }
+  return text;
+};
 ---
 
-<div class="slide">
+<div class="card">
   <img src={photo} alt="" />
+  <h3>{title}</h3>
   <p>
-    {text}
+    {trimText(text)}
   </p>
   <button class="btn btn-secondary"
     ><a href=`/services#${id}`></a> LEARN MORE</button

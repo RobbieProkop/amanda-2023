@@ -55,10 +55,15 @@
       justify-items: center;
       padding-left: 1rem;
 
-      .slide {
+      .card {
         padding: 2rem;
         width: 377px;
         height: 100%;
+
+        h3 {
+          // font-size: 1rem;
+          margin-top: 1rem;
+        }
         img {
           width: 100%;
           max-height: 500px;
