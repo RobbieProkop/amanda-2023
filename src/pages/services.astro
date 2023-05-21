@@ -1,6 +1,6 @@
 ---
 import Hero from "../components/Hero.astro";
-import ServiceCards from "../components/ServiceCards.jsx";
+import ServiceDropDown from "../components/ServiceDropDown.jsx";
 import ReadyToBook from "../components/ReadyToBook.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
   <!-- Hero -->
   <Hero title="Services" color="orange" />
   <!-- Services -->
-  <ServiceCards client:load />
+  <ServiceDropDown client:load />
 
   <ReadyToBook />
 </Layout>

@@ -1,0 +1,19 @@
+---
+export interface Props {
+  photo: string;
+  text: string;
+  id: number;
+}
+
+const { photo, text, id } = Astro.props;
+---
+
+<div class="slide">
+  <img src={photo} alt="" />
+  <p>
+    {text}
+  </p>
+  <button class="btn btn-secondary"
+    ><a href=`/services#${id}`></a> LEARN MORE</button
+  >
+</div>

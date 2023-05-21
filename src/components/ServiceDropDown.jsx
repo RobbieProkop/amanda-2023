@@ -1,8 +1,8 @@
-import "../styles/serviceCards.scss";
-import { useState } from "react";
+import "../styles/serviceDropDown.scss";
+import { useEffect, useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-const ServiceCards = () => {
+const ServiceDropDown = () => {
   const [visible, setVisible] = useState([]);
 
   const services = [
@@ -52,12 +52,26 @@ const ServiceCards = () => {
     });
   };
 
+  useEffect(() => {
+    const hash = window.location.hash.substring(1);
+
+    if (hash) {
+      setVisible((prev) => {
+        const newVisible = [...prev];
+        services.forEach((item, i) => (newVisible[i + 1] = false));
+        newVisible[hash] = !newVisible[hash];
+        return newVisible;
+      });
+    }
+  }, []);
+
   return (
-    <section className="serviceCards">
+    <section className="serviceDropDown">
       <div className="container">
         <TransitionGroup>
           {services.map((service) => (
             <div key={service.id} id={service.id} className="form-group">
+              {console.log("serv", service.id, visible[service.id])}
               <div onClick={() => toggleAnswer(service.id)} className="title">
                 <div className="expand">
                   {visible[service.id] ? "\u2013" : "+"}
@@ -67,59 +81,17 @@ const ServiceCards = () => {
               <CSSTransition
                 in={visible[service.id]}
                 timeout={1000}
-                unmountOnExit
                 classNames="transition"
               >
-                <p>{service.value}</p>
+                <p className={visible[service.id] ? "" : "p"}>
+                  {service.value}
+                </p>
               </CSSTransition>
             </div>
           ))}
         </TransitionGroup>
-
-        {/* <div class="form-group">
-          <div class="title">
-            <div class="expand">+</div>
-            <h2>Service 1</h2>
-          </div>
-          <p></p>
-        </div>
-        <div class="form-group">
-          <div class="title">
-            <div class="expand">+</div>
-            <h2>Service 2</h2>
-          </div>
-          <p></p>
-        </div>
-        <div class="form-group">
-          <div class="title">
-            <div class="expand">+</div>
-            <h2>Service 3</h2>
-          </div>
-          <p></p>
-        </div>
-        <div class="form-group">
-          <div class="title">
-            <div class="expand">+</div>
-            <h2>Service 4</h2>
-          </div>
-          <p></p>
-        </div>
-        <div class="form-group">
-          <div class="title">
-            <div class="expand">+</div>
-            <h2>Service 5</h2>
-          </div>
-          <p></p>
-        </div>
-        <div class="form-group">
-          <div class="title">
-            <div class="expand">+</div>
-            <h2>Service 6</h2>
-          </div>
-          <p></p>
-        </div> */}
       </div>
     </section>
   );
 };
-export default ServiceCards;
+export default ServiceDropDown;

@@ -1,6 +1,6 @@
 @import "variables";
 
-.serviceCards {
+.serviceDropDown {
   padding: 0 2rem;
 
   .container {
@@ -28,12 +28,17 @@
         }
       }
 
+      .p {
+        display: none;
+      }
       .transition-enter {
+        display: block;
         opacity: 0;
         font-size: 0;
         margin-bottom: 0;
       }
       .transition-enter-active {
+        display: block;
         opacity: 1;
         font-size: 1rem;
         transition: opacity 2500ms, font-size 300ms;
@@ -41,6 +46,7 @@
       }
 
       .transition-enter-done {
+        display: block;
         opacity: 1;
         font-size: 1rem;
         margin: 1rem 0 2rem;
