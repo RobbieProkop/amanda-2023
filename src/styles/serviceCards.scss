@@ -1,0 +1,48 @@
+@import "variables";
+
+.serviceCards {
+  padding: 0 2rem;
+
+  .container {
+    .form-group {
+      margin: 1rem 0;
+      .title {
+        display: flex;
+        flex-direction: row;
+        color: $third;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        h2 {
+          margin-top: 0;
+        }
+
+        .expand {
+          font-size: 2rem;
+          width: 16px;
+          margin-right: 1rem;
+          align-self: flex-start;
+          background: url();
+        }
+      }
+      .transition-enter {
+        opacity: 0;
+      }
+      .transition-enter-active {
+        opacity: 1;
+        transition: opacity 2000ms;
+        margin: 0;
+      }
+
+      .transition-exit {
+        opacity: 1;
+      }
+      .transition-exit-active {
+        opacity: 0;
+        transition: opacity 2000ms;
+      }
+    }
+  }
+}
