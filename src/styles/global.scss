@@ -45,18 +45,19 @@ a {
   border-radius: 25px;
   font-family: $secondary-font;
   font-size: 1rem;
+  color: $white;
 
   &-primary {
     background-color: $secondary;
-    color: $white;
   }
   &-secondary {
     background-color: $primary;
-    color: $white;
   }
   &-third {
     background-color: $third;
-    color: $white;
+  }
+  &-orange {
+    background-color: $orange;
   }
 }
 
