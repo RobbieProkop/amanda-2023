@@ -27,21 +27,40 @@
           background: url();
         }
       }
+
       .transition-enter {
         opacity: 0;
+        font-size: 0;
+        margin-bottom: 0;
       }
       .transition-enter-active {
         opacity: 1;
-        transition: opacity 2000ms;
-        margin: 0;
+        font-size: 1rem;
+        transition: opacity 2500ms, font-size 300ms;
+        margin: 1rem 0 2rem;
+      }
+
+      .transition-enter-done {
+        opacity: 1;
+        font-size: 1rem;
+        margin: 1rem 0 2rem;
       }
 
       .transition-exit {
         opacity: 1;
+        font-size: 1rem;
+        margin: 1rem 0 2rem;
       }
       .transition-exit-active {
         opacity: 0;
-        transition: opacity 2000ms;
+        font-size: 0;
+        margin: 0;
+        transition: opacity 300ms, font-size 300ms, margin 300ms;
+      }
+      .transition-exit-done {
+        opacity: 0;
+        font-size: 0;
+        margin: 0;
       }
     }
   }
