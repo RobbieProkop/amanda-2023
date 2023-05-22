@@ -8,11 +8,10 @@ import services from "../servicesArr";
 <section class="services">
   <div class="container">
     <h2>Services</h2>
-    <div class="button-group">
-      <button class="carousel-button prev">&#10140;</button>
-      <button class="carousel-button next">&#10140;</button>
-    </div>
-    <div class="carousel">
+    <button class="carousel-button prev" id="prev">&#10140;</button>
+    <button class="carousel-button next" id="next">&#10140;</button>
+
+    <div class="carousel" id="carousel-container">
       {
         services.map((service) => {
           return (
@@ -25,56 +24,28 @@ import services from "../servicesArr";
           );
         })
       }
-      <!-- <div class="slide">
-        <img src={photo} alt="" />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi proin
-          sed libero enim sed. At lectus urna duis convallis convallis. Lorem
-          ipsum dolor sit amet.
-        </p>
-        <button class="btn btn-secondary">LEARN MORE</button>
-      </div>
-      <div class="slide">
-        <img src={photo} alt="" />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi proin
-          sed libero enim sed. At lectus urna duis convallis convallis. Lorem
-          ipsum dolor sit amet.
-        </p>
-        <button class="btn btn-secondary">LEARN MORE</button>
-      </div>
-      <div class="slide">
-        <img src={photo} alt="" />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi proin
-          sed libero enim sed. At lectus urna duis convallis convallis. Lorem
-          ipsum dolor sit amet.
-        </p>
-        <button class="btn btn-secondary">LEARN MORE</button>
-      </div>
-      <div class="slide">
-        <img src={photo} alt="" />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi proin
-          sed libero enim sed. At lectus urna duis convallis convallis. Lorem
-          ipsum dolor sit amet.
-        </p>
-        <button class="btn btn-secondary">LEARN MORE</button>
-      </div>
-      <div class="slide">
-        <img src={photo} alt="" />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi proin
-          sed libero enim sed. At lectus urna duis convallis convallis. Lorem
-          ipsum dolor sit amet.
-        </p>
-        <button class="btn btn-secondary">LEARN MORE</button>
-      </div> -->
     </div>
   </div>
 </section>
+
+<script>
+  const container = document.getElementById(
+    "carousel-container"
+  ) as HTMLElement;
+  const cards = Array.from(container.children) as HTMLElement[];
+  const nextBtn = document.getElementById("next") as HTMLElement;
+  const prevBtn = document.getElementById("prev") as HTMLElement;
+
+  let containerDimensions = cards[0].getBoundingClientRect();
+  let cardWidth = containerDimensions.width;
+  console.log("cardwidth", cardWidth);
+
+  nextBtn.addEventListener("click", () => {
+    console.log("next");
+    container.scrollLeft += cardWidth * 3;
+  });
+  prevBtn.addEventListener("click", () => {
+    console.log("prev");
+    container.scrollLeft -= cardWidth * 3;
+  });
+</script>

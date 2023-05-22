@@ -16,13 +16,13 @@ const trimText = (text: string) => {
 };
 ---
 
-<div class="card">
-  <img src={photo} alt="" />
-  <h3>{title}</h3>
-  <p>
-    {trimText(text)}
-  </p>
-  <button class="btn btn-secondary"
-    ><a href=`/services#${id}`></a> LEARN MORE</button
-  >
-</div>
+<a href=`/services#${id}` class="card-container"
+  ><div class="card">
+    <img src={photo} role="presentation" />
+    <h3>{title}</h3>
+    <p>
+      {trimText(text)}
+    </p>
+    <button class="btn btn-secondary">LEARN MORE</button>
+  </div></a
+>
