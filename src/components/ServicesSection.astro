@@ -35,25 +35,48 @@ import services from "../servicesArr";
   const nextBtn = document.getElementById("next") as HTMLElement;
   const prevBtn = document.getElementById("prev") as HTMLElement;
 
-  let currentIndex = 0;
+  let currentIndex: number = parseInt(
+    getComputedStyle(container).getPropertyValue("--carousel-index")
+  );
 
+  console.log("car type", currentIndex);
   nextBtn.addEventListener("click", () => {
-    let scrollWidth = container.offsetWidth;
-    currentIndex = (currentIndex + 1) % cards.length;
-    container.insertBefore(cards[currentIndex], null);
-    container.scrollBy({
-      left: scrollWidth,
-      behavior: "smooth",
-    });
+    // currentIndex += 1;
+    container.style.setProperty(
+      "--carousel-index",
+      (currentIndex + 1).toString()
+    );
+    currentIndex += 1;
+    console.log("next", currentIndex);
+  });
+  prevBtn.addEventListener("click", () => {
+    console.log("prev start", currentIndex);
+
+    container.style.setProperty(
+      "--carousel-index",
+      (currentIndex - 1).toString()
+    );
+    currentIndex -= 1;
+    console.log("prev end", currentIndex);
   });
 
-  prevBtn.addEventListener("click", () => {
-    let scrollWidth = container.offsetWidth;
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    container.insertBefore(cards[currentIndex], null);
-    container.scrollBy({
-      left: -scrollWidth,
-      behavior: "smooth",
-    });
-  });
+  // nextBtn.addEventListener("click", () => {
+  //   let scrollWidth = container.offsetWidth;
+  //   currentIndex = (currentIndex + 1) % cards.length;
+  //   container.insertBefore(cards[currentIndex], null);
+  //   container.scrollBy({
+  //     left: scrollWidth,
+  //     behavior: "smooth",
+  //   });
+  // });
+
+  // prevBtn.addEventListener("click", () => {
+  //   let scrollWidth = container.offsetWidth;
+  //   currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  //   container.insertBefore(cards[currentIndex], null);
+  //   container.scrollBy({
+  //     left: -scrollWidth,
+  //     behavior: "smooth",
+  //   });
+  // });
 </script>
