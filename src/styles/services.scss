@@ -7,6 +7,7 @@
     overflow-x: hidden;
     padding: 1.5rem;
     @include flex-center();
+    background-color: $background-blue;
     flex-direction: column;
     h2 {
       color: $primary-dark;
@@ -47,8 +48,10 @@
 
     .carousel {
       display: flex;
+      // align-items: center;
       width: calc(100% - 2 * 5rem);
       --carousel-index: 0;
+      --items-per-screen: 3;
       // overflow-x: hidden;
       // scroll-snap-type: x mandatory;
       transform: translateX(calc(var(--carousel-index) * -100%));
@@ -60,10 +63,12 @@
 
       .card {
         border: 1px solid red;
-        flex: 0 0 33%;
-        max-width: 33%;
+        flex: 0 0 calc(100% / var(--items-per-screen));
+        max-width: calc(100% / var(--items-per-screen));
         padding: 2rem;
         margin-right: 0.5rem;
+        display: flex;
+        flex-direction: column;
         // width: 350px;
 
         img {
@@ -71,9 +76,18 @@
           aspect-ratio: 3/4;
           border-radius: 5px;
         }
-        h3 {
-          font-size: 1.5rem;
-          margin: 1rem 0;
+        .card-content {
+          @include flex-between();
+          flex-direction: column;
+          height: 100%;
+          h3 {
+            font-size: 1.5rem;
+            margin-top: auto;
+            // margin: 1rem 0;
+          }
+          a {
+            margin-top: 1rem;
+          }
         }
       }
 
@@ -111,6 +125,43 @@
       //     }
       //   }
       // }
+    }
+    .progress-bar {
+      @include flex-center();
+      gap: 0.25rem;
+
+      .progress-item {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin: 2rem 0;
+
+        &.active {
+          // background-color: rgba(0, 0, 0, 0.5);
+          background-color: $orange;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .services {
+    .container {
+      .carousel {
+        --items-per-screen: 2;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .services {
+    .container {
+      .carousel {
+        // flex-direction: column;
+        width: 100%;
+      }
     }
   }
 }

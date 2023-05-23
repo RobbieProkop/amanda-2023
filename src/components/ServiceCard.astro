@@ -11,9 +11,10 @@ const { photo, title, id, index } = Astro.props;
 
 <div class="card" data-index={index}>
   <img src={photo} role="presentation" />
-
-  <h3>{title}</h3>
-  <a href=`/services#${id}`
-    ><button class="btn btn-secondary">LEARN MORE</button></a
-  >
+  <div class="card-content">
+    <h3>{title}</h3>
+    <a href=`/services#${id}`
+      ><button class="btn btn-secondary">LEARN MORE</button></a
+    >
+  </div>
 </div>
