@@ -3,9 +3,7 @@
 .about {
   padding: 2rem;
   .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
     grid-gap: 2rem;
 
     .image {

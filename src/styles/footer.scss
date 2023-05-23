@@ -7,9 +7,7 @@
 
   .container {
     max-width: 1400px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between();
     height: 100%;
     padding: 2rem;
 
@@ -32,8 +30,7 @@
 
     .socials {
       width: 130px;
-      display: flex;
-      justify-content: center;
+      @include flex-center();
       img {
         margin: 0 auto;
       }

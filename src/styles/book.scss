@@ -4,9 +4,7 @@
   background-color: rgba(171, 183, 183, 0.1);
   .container {
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center();
     flex-direction: column;
     margin: 4rem auto;
 

@@ -1,28 +1,19 @@
 ---
 export interface Props {
   photo: string;
-  text: string;
   title: string;
   id: string;
+  index: number;
 }
 
-const { photo, text, title, id } = Astro.props;
-
-const trimText = (text: string) => {
-  if (text.length > 100) {
-    return text.substring(0, 100) + "...";
-  }
-  return text;
-};
+const { photo, title, id, index } = Astro.props;
 ---
 
-<a href=`/services#${id}` class="card-container"
-  ><div class="card">
-    <img src={photo} role="presentation" />
-    <h3>{title}</h3>
-    <p>
-      {trimText(text)}
-    </p>
-    <button class="btn btn-secondary">LEARN MORE</button>
-  </div></a
->
+<div class="card" data-index={index}>
+  <img src={photo} role="presentation" />
+
+  <h3>{title}</h3>
+  <a href=`/services#${id}`
+    ><button class="btn btn-secondary">LEARN MORE</button></a
+  >
+</div>

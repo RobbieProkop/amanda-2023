@@ -3,22 +3,17 @@
 .services {
   .container {
     text-align: center;
-    min-height: 80vh;
     position: relative;
     overflow-x: hidden;
     padding: 1.5rem;
+    @include flex-center();
+    flex-direction: column;
     h2 {
       color: $primary-dark;
     }
-    // .button-group {
-    //   position: absolute;
-    //   display: flex;
-    //   justify-content: space-between;
-    //   align-items: center;
-    //   inset: 0;
-
     .carousel-button {
       position: absolute;
+      @include flex-center();
       z-index: 1000;
       top: 50%;
       transform: translateY(-50%);
@@ -51,61 +46,68 @@
     }
 
     .carousel {
-      position: relative;
-      z-index: 200;
-      text-align: left;
-      overflow-x: scroll;
-      z-index: 0;
       display: flex;
-      align-items: center;
-      justify-items: center;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scroll-padding: 0 50%;
-      padding-left: 2rem;
+      // align-items: center;
+      // justify-items: center;
+      // overflow-x: auto;
+      // scroll-snap-type: x mandatory;
+      // text-align: left;
+
+      // scroll-padding: 0 50%;
+      // padding-left: 2rem;
+      // grid-gap: 2rem;
+
       &::-webkit-scrollbar {
         display: none;
       }
 
-      .card-container {
-        // padding: 2rem 0 2rem 2rem;
-        // margin-right: 2rem;
-        flex: 0 0 auto;
-        width: calc(100% / 3);
-        scroll-snap-align: center;
-      }
-
       .card {
-        width: 350px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        &:hover {
-          cursor: pointer;
-        }
-        a {
-          width: 1005;
-        }
-        h3 {
-          margin-top: 1rem;
-        }
+        flex: 0 0 33%;
+        max-width: 33%;
+        padding: 2rem;
+        margin-right: 0.5rem;
+        // width: 350px;
+
         img {
           width: 100%;
-          max-height: 500px;
-        }
-        p {
-          margin: 1rem 0;
-          font-size: 20px;
-        }
-        button {
-          margin-top: auto;
-          &:hover {
-            cursor: pointer;
-          }
+          aspect-ratio: 3/4;
         }
       }
+
+      // .card {
+      //   display: flex;
+      //   flex-direction: column;
+      //   // max-width: 280px;
+      //   // width: 33%;
+      //   height: 700px;
+      //   scroll-snap-align: center;
+
+      //   img {
+      //     width: 100%;
+      //     max-height: 400px;
+      //   }
+      //   .card-content {
+      //     display: flex;
+      //     align-items: left;
+      //     justify-content: space-between;
+      //     flex-direction: column;
+      //     height: 300px;
+      //     max-width: 333px;
+
+      //     h3 {
+      //       margin-top: 1rem;
+      //     }
+      //     p {
+      //       font-size: 20px;
+      //     }
+      //     button {
+      //       margin-top: auto;
+      //       &:hover {
+      //         cursor: pointer;
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 }

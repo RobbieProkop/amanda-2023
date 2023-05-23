@@ -1,6 +1,5 @@
 ---
 import "../styles/services.scss";
-import photo from "../../public/assets/yuli.jpg";
 import ServiceCard from "../components/ServiceCard.astro";
 import services from "../servicesArr";
 ---
@@ -13,13 +12,13 @@ import services from "../servicesArr";
 
     <div class="carousel" id="carousel-container">
       {
-        services.map((service) => {
+        services.map((service, index) => {
           return (
             <ServiceCard
               photo={service.photo}
-              text={service.value}
               title={service.title}
               id={service.id}
+              index={index}
             />
           );
         })
@@ -36,16 +35,25 @@ import services from "../servicesArr";
   const nextBtn = document.getElementById("next") as HTMLElement;
   const prevBtn = document.getElementById("prev") as HTMLElement;
 
-  let containerDimensions = cards[0].getBoundingClientRect();
-  let cardWidth = containerDimensions.width;
-  console.log("cardwidth", cardWidth);
+  let currentIndex = 0;
 
   nextBtn.addEventListener("click", () => {
-    console.log("next");
-    container.scrollLeft += cardWidth * 3;
+    let scrollWidth = container.offsetWidth;
+    currentIndex = (currentIndex + 1) % cards.length;
+    container.insertBefore(cards[currentIndex], null);
+    container.scrollBy({
+      left: scrollWidth,
+      behavior: "smooth",
+    });
   });
+
   prevBtn.addEventListener("click", () => {
-    console.log("prev");
-    container.scrollLeft -= cardWidth * 3;
+    let scrollWidth = container.offsetWidth;
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    container.insertBefore(cards[currentIndex], null);
+    container.scrollBy({
+      left: -scrollWidth,
+      behavior: "smooth",
+    });
   });
 </script>
