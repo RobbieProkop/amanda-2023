@@ -45,7 +45,9 @@
         outline: 1px solid #333;
       }
     }
-
+    .overlay {
+      width: 100%;
+    }
     .carousel {
       display: flex;
       // align-items: center;
@@ -62,11 +64,12 @@
       }
 
       .card {
-        border: 1px solid red;
+        // border: 1px solid red;
+
         flex: 0 0 calc(100% / var(--items-per-screen));
         max-width: calc(100% / var(--items-per-screen));
-        padding: 2rem;
-        margin-right: 0.5rem;
+        padding: 2.5rem;
+        // margin-right: 0.5rem;
         display: flex;
         flex-direction: column;
         // width: 350px;

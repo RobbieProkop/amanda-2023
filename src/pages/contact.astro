@@ -3,12 +3,21 @@ import Hero from "../components/Hero.astro";
 import Map from "../components/Map.svelte";
 import ContactLayout from "../layouts/ContactLayout.astro";
 import "../styles/contact.scss";
+import "leaflet/dist/leaflet.css";
+
+const location = { latitude: 51.0317, longitude: -114.10072 };
 ---
 
 <ContactLayout title="Amanda Prokop RMT">
   <!-- Hero -->
   <Hero title="Contact" color="orange" />
-  <!-- Contact -->
+  <!-- Contact Form -->
   <!-- Google Maps -->
-  <Map client:load location={{ longitude: 51.049999, latitude: -114.066666 }} />
+  <h2>We are here:</h2>
+  <Map
+    client:load
+    location={location}
+    zoom={14}
+    markerMarkup="<a target='_blank' href='https://goo.gl/maps/uzpCVsW9dxGcoGJm6'>Amanda Prokop RMT is here!</a>"
+  />
 </ContactLayout>

@@ -1,7 +1,7 @@
 ---
 import "../styles/services.scss";
 import ServiceCard from "../components/ServiceCard.astro";
-import services from "../servicesArr";
+import services from "../helpers/servicesArr";
 ---
 
 <section class="services">
@@ -9,20 +9,21 @@ import services from "../servicesArr";
     <h2>Services</h2>
     <button class="carousel-button prev" id="prev">&#10140;</button>
     <button class="carousel-button next" id="next">&#10140;</button>
-
-    <div class="carousel" id="carousel-container">
-      {
-        services.map((service, index) => {
-          return (
-            <ServiceCard
-              photo={service.photo}
-              title={service.title}
-              id={service.id}
-              index={index}
-            />
-          );
-        })
-      }
+    <div class="overlay" id="overlay">
+      <div class="carousel" id="carousel-container">
+        {
+          services.map((service, index) => {
+            return (
+              <ServiceCard
+                photo={service.photo}
+                title={service.title}
+                id={service.id}
+                index={index}
+              />
+            );
+          })
+        }
+      </div>
     </div>
 
     <!-- use JS to create teh progress bar -->
@@ -38,6 +39,7 @@ import services from "../servicesArr";
   const progress = document.getElementById("progress") as HTMLElement;
   const nextBtn = document.getElementById("next") as HTMLElement;
   const prevBtn = document.getElementById("prev") as HTMLElement;
+  const overlay = document.getElementById("overlay") as HTMLElement;
 
   //touch elements
   let touchStartX: number = 0;
@@ -73,8 +75,8 @@ import services from "../servicesArr";
     getComputedStyle(container).getPropertyValue("--carousel-index")
   );
 
-  container.addEventListener("touchstart", handleTouchStart);
-  container.addEventListener("touchend", handleTouchEnd);
+  overlay.addEventListener("touchstart", handleTouchStart);
+  overlay.addEventListener("touchend", handleTouchEnd);
 
   // Function to calculate and render progress bar.
   const calculateProgressBar = () => {

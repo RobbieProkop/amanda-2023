@@ -1,7 +1,7 @@
 import "../styles/serviceDropDown.scss";
 import { useEffect, useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import services from "../servicesArr";
+import services from "../helpers/servicesArr";
 
 const ServiceDropDown = () => {
   console.log("s", services);

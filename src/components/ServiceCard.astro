@@ -9,7 +9,7 @@ export interface Props {
 const { photo, title, id, index } = Astro.props;
 ---
 
-<div class="card" data-index={index}>
+<div class="card" data-index={index} style=`--index:${index}`>
   <img src={photo} role="presentation" />
   <div class="card-content">
     <h3>{title}</h3>
