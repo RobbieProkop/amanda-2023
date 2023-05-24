@@ -31,125 +31,70 @@ import services from "../servicesArr";
 </section>
 
 <script>
+  // Getting DOM elements.
   const container = document.getElementById(
     "carousel-container"
   ) as HTMLElement;
-  const cards = Array.from(container.children) as HTMLElement[];
   const progress = document.getElementById("progress") as HTMLElement;
   const nextBtn = document.getElementById("next") as HTMLElement;
   const prevBtn = document.getElementById("prev") as HTMLElement;
 
-  const initialItemsPerScreen = parseInt(
-    getComputedStyle(container).getPropertyValue("--items-per-screen")
-  );
+  // Function to get current number of items per screen.
+  const getItemsPerScreen = (): number =>
+    parseInt(
+      getComputedStyle(container).getPropertyValue("--items-per-screen")
+    );
 
-  const getItemsPerScreen = () => {
-    const computedStyle =
-      getComputedStyle(container).getPropertyValue("--items-per-screen");
-    const itemsPerScreen = parseInt(computedStyle);
-    return itemsPerScreen;
-  };
-  const itemCount = container.children.length;
-  let itemsPerScreen = getItemsPerScreen();
-  let progressItemCount = Math.ceil(itemCount / itemsPerScreen);
-
-  // current index to see which progress index we are on
+  let progressItemCount: number;
   let currentIndex: number = parseInt(
     getComputedStyle(container).getPropertyValue("--carousel-index")
   );
 
-  //calculate progress bar
-  const calculateProgressBar = (
-    progress: HTMLElement,
-    progressItemCount: number
-  ) => {
-    progress.innerHTML = "";
+  // Function to calculate and render progress bar.
+  const calculateProgressBar = () => {
+    const itemsPerScreen = getItemsPerScreen();
+    progressItemCount = Math.ceil(container.children.length / itemsPerScreen);
 
-    // Add an index to each progress bar item
+    progress.innerHTML = ""; // Clear current progress bar.
+
+    // Create new progress bar items.
     for (let i = 0; i < progressItemCount; i++) {
       const barItem = document.createElement("div");
       barItem.classList.add("progress-item");
       barItem.setAttribute("data-index", i.toString());
-
-      if (i === currentIndex) {
-        barItem.classList.add("active");
-      }
+      if (i === currentIndex) barItem.classList.add("active");
       progress.append(barItem);
     }
   };
 
-  // call the calculate function
-  calculateProgressBar(progress, progressItemCount);
-  // recalculate progress based on window size
+  // Call the function to initialize the progress bar.
+  calculateProgressBar();
 
-  window.addEventListener("resize", () => {
-    let itemsPerScreen = getItemsPerScreen();
-    let progressCount = Math.ceil(itemCount / itemsPerScreen);
-    calculateProgressBar(progress, progressCount);
-  });
+  // Recalculate progress bar based on window size.
+  window.addEventListener("resize", calculateProgressBar);
 
+  // Add event listener for click events on the progress bar.
   progress.addEventListener("click", (e) => {
     const target = e.target as HTMLDivElement;
-
     const index = target.getAttribute("data-index");
     if (!index) return;
 
-    const clickedIndex = parseInt(index);
-    //update the currentIndex
-    currentIndex = clickedIndex;
+    currentIndex = parseInt(index);
     container.style.setProperty("--carousel-index", currentIndex.toString());
-
-    calculateProgressBar(progress, progressItemCount);
+    calculateProgressBar();
   });
 
-  nextBtn.addEventListener("click", () => {
-    if (currentIndex !== progressItemCount - 1) {
-      container.style.setProperty(
-        "--carousel-index",
-        (currentIndex + 1).toString()
-      );
-      currentIndex += 1;
-    } else {
-      container.style.setProperty("--carousel-index", (0).toString());
-      currentIndex = 0;
-    }
-    calculateProgressBar(progress, progressItemCount);
-  });
-  prevBtn.addEventListener("click", () => {
-    if (currentIndex !== 0) {
-      container.style.setProperty(
-        "--carousel-index",
-        (currentIndex - 1).toString()
-      );
-      currentIndex -= 1;
-    } else {
-      container.style.setProperty(
-        "--carousel-index",
-        (progressItemCount - 1).toString()
-      );
-      currentIndex = progressItemCount - 1;
-    }
+  // Helper function to handle button clicks.
+  const handleButtonClick = (increment: number) => {
+    currentIndex =
+      (currentIndex + increment + progressItemCount) % progressItemCount;
+    container.style.setProperty("--carousel-index", currentIndex.toString());
+    calculateProgressBar();
+  };
 
-    calculateProgressBar(progress, progressItemCount);
-  });
+  // Add event listener for next button click.
+  nextBtn.addEventListener("click", () => handleButtonClick(1));
 
-  // nextBtn.addEventListener("click", () => {
-  //   let scrollWidth = container.offsetWidth;
-  //   currentIndex = (currentIndex + 1) % cards.length;
-  //   container.insertBefore(cards[currentIndex], null);
-  //   container.scrollBy({
-  //     left: scrollWidth,
-  //     behavior: "smooth",
-  //   });
-  // });
-
-  // prevBtn.addEventListener("click", () => {
-  //   let scrollWidth = container.offsetWidth;
-  //   currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-  //   container.insertBefore(cards[currentIndex], null);
-  //   container.scrollBy({
-  //     left: -scrollWidth,
-  //     behavior: "smooth",
-  //   });
-  // });
+  // Add event listener for previous button click.
+  prevBtn.addEventListener("click", () => handleButtonClick(-1));
 </script>
