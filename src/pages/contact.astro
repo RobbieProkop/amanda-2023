@@ -13,11 +13,20 @@ const location = { latitude: 51.0317, longitude: -114.10072 };
   <Hero title="Contact" color="orange" />
   <!-- Contact Form -->
   <!-- Google Maps -->
-  <h2>We are here:</h2>
-  <Map
-    client:load
-    location={location}
-    zoom={14}
-    markerMarkup="<a target='_blank' href='https://goo.gl/maps/uzpCVsW9dxGcoGJm6'>Amanda Prokop RMT is here!</a>"
-  />
+  <div class="map">
+    <div class="container">
+      <div class="map-content">
+        <h2>Location</h2>
+        <p>Address: 2520 16b St SW, Calgary, AB T2T 4L9</p>
+        <p>Phone: 403 835-0046</p>
+        <p>Email: amandaprokop.rmt@gmail.com</p>
+      </div>
+    </div>
+    <Map
+      client:load
+      location={location}
+      zoom={14}
+      markerMarkup="<a target='_blank' href='https://goo.gl/maps/uzpCVsW9dxGcoGJm6'>Amanda Prokop RMT is here!</a>"
+    />
+  </div>
 </ContactLayout>

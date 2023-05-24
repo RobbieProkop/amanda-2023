@@ -10,12 +10,15 @@
   const { latitude, longitude } = location;
 </script>
 
-<figure use:setMap={{ latitude, longitude, zoom, markerMarkup }} />
+  <figure use:setMap={{ latitude, longitude, zoom, markerMarkup }} />
+
+
 
 <style>
+  
   figure {
-    width: 38rem;
-    height: 21rem;
-    box-shadow: var(--shadow-elevation-low);
+    width: 95vw;
+    height: 27rem;
+    
   }
 </style>
