@@ -90,41 +90,6 @@
           }
         }
       }
-
-      // .card {
-      //   display: flex;
-      //   flex-direction: column;
-      //   // max-width: 280px;
-      //   // width: 33%;
-      //   height: 700px;
-      //   scroll-snap-align: center;
-
-      //   img {
-      //     width: 100%;
-      //     max-height: 400px;
-      //   }
-      //   .card-content {
-      //     display: flex;
-      //     align-items: left;
-      //     justify-content: space-between;
-      //     flex-direction: column;
-      //     height: 300px;
-      //     max-width: 333px;
-
-      //     h3 {
-      //       margin-top: 1rem;
-      //     }
-      //     p {
-      //       font-size: 20px;
-      //     }
-      //     button {
-      //       margin-top: auto;
-      //       &:hover {
-      //         cursor: pointer;
-      //       }
-      //     }
-      //   }
-      // }
     }
     .progress-bar {
       @include flex-center();
@@ -159,11 +124,12 @@
     }
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .services {
     .container {
       .carousel {
         // flex-direction: column;
+        --items-per-screen: 1;
         width: 100%;
       }
     }

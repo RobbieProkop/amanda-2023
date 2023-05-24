@@ -39,6 +39,29 @@ import services from "../servicesArr";
   const nextBtn = document.getElementById("next") as HTMLElement;
   const prevBtn = document.getElementById("prev") as HTMLElement;
 
+  // //touch elements
+  // let touchStartX: number = 0;
+  // let touchEndX: number = 0;
+
+  // // function to record starting X point
+  // const handleTouchStart = (e: TouchEvent) => {
+  //   touchStartX = e.changedTouches[0].clientX;
+  // };
+
+  // const handleSwipeGesture = () => {
+  //   const swipeThreshold = 1;
+
+  //   if (Math.abs(touchStartX - touchEndX) < swipeThreshold) return;
+  //   if (touchStartX > touchStartX) return handleButtonClick(1);
+  //   return handleButtonClick(-1);
+  // };
+
+  // // function to record ending X point
+  // const handleTouchEnd = (e: TouchEvent) => {
+  //   touchEndX = e.changedTouches[0].clientX;
+  //   handleSwipeGesture();
+  // };
+
   // Function to get current number of items per screen.
   const getItemsPerScreen = (): number =>
     parseInt(
@@ -49,6 +72,9 @@ import services from "../servicesArr";
   let currentIndex: number = parseInt(
     getComputedStyle(container).getPropertyValue("--carousel-index")
   );
+
+  // container.addEventListener("touchstart", handleTouchStart);
+  // container.addEventListener("touchend", handleTouchEnd);
 
   // Function to calculate and render progress bar.
   const calculateProgressBar = () => {
