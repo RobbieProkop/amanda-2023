@@ -1,11 +1,14 @@
 ---
 import Hero from "../components/Hero.astro";
-import Layout from "../layouts/Layout.astro";
+import Map from "../components/Map.svelte";
+import ContactLayout from "../layouts/ContactLayout.astro";
+import "../styles/contact.scss";
 ---
 
-<Layout title="Amanda Prokop RMT">
+<ContactLayout title="Amanda Prokop RMT">
   <!-- Hero -->
   <Hero title="Contact" color="orange" />
   <!-- Contact -->
   <!-- Google Maps -->
-</Layout>
+  <Map client:load location={{ longitude: 51.049999, latitude: -114.066666 }} />
+</ContactLayout>
