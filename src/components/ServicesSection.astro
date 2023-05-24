@@ -56,10 +56,12 @@ import services from "../servicesArr";
     );
 
     const progressItemCount = Math.ceil(itemCount / itemsPerScreen);
-    console.log(itemCount);
+
+    // Add an index to each progress bar item
     for (let i = 0; i < progressItemCount; i++) {
       const barItem = document.createElement("div");
       barItem.classList.add("progress-item");
+      barItem.setAttribute("data-index", i.toString());
 
       if (i === currentIndex) {
         barItem.classList.add("active");
@@ -71,6 +73,20 @@ import services from "../servicesArr";
   // call the calculate function
   calculateProgressBar(progress);
 
+  progress.addEventListener("click", (e) => {
+    const target = e.target as HTMLDivElement;
+
+    const index = target.getAttribute("data-index");
+    if (!index) return;
+
+    const clickedIndex = parseInt(index);
+    //update the currentIndex
+    currentIndex = clickedIndex;
+    container.style.setProperty("--carousel-index", currentIndex.toString());
+
+    calculateProgressBar(progress);
+  });
+
   nextBtn.addEventListener("click", () => {
     // currentIndex += 1;
     container.style.setProperty(
@@ -78,18 +94,14 @@ import services from "../servicesArr";
       (currentIndex + 1).toString()
     );
     currentIndex += 1;
-    console.log("next", currentIndex);
     calculateProgressBar(progress);
   });
   prevBtn.addEventListener("click", () => {
-    console.log("prev start", currentIndex);
-
     container.style.setProperty(
       "--carousel-index",
       (currentIndex - 1).toString()
     );
     currentIndex -= 1;
-    console.log("prev end", currentIndex);
     calculateProgressBar(progress);
   });
 
