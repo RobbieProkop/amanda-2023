@@ -1,0 +1,12 @@
+.reviews {
+  .container {
+    .text {
+      display: flex;
+      align-items: center;
+      overflow-x: hidden;
+      .review {
+        border: 1px solid red;
+      }
+    }
+  }
+}
