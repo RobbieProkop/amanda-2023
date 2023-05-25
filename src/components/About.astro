@@ -1,6 +1,12 @@
 ---
 import "../styles/about.scss";
 import photo from "/assets/yuli.jpg";
+
+export interface Props {
+  page?: string;
+}
+
+const { page } = Astro.props;
 ---
 
 <section class="about">
@@ -34,7 +40,17 @@ import photo from "/assets/yuli.jpg";
         enim sed. At lectus urna duis convallis convallis. Lorem ipsum dolor sit
         amet.
       </p>
-      <button class="btn btn-third">LEARN MORE</button>
+      {
+        page ? (
+          <a href="/about">
+            <button class="btn btn-third">LEARN MORE</button>
+          </a>
+        ) : (
+          <a href="/contact">
+            <button class="btn btn-third">Contact Us</button>
+          </a>
+        )
+      }
     </div>
   </div>
 </section>
