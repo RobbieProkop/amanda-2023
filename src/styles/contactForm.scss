@@ -1,0 +1,14 @@
+@import "variables";
+
+.contact-form {
+  .container {
+    @include flex-between();
+    padding: 2rem 2rem 0;
+
+    .form {
+      input {
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 ---
+import ContactForm from "../components/ContactForm.astro";
 import Hero from "../components/Hero.astro";
 import Map from "../components/Map.svelte";
 import ContactLayout from "../layouts/ContactLayout.astro";
@@ -12,6 +13,7 @@ const location = { latitude: 51.0317, longitude: -114.10072 };
   <!-- Hero -->
   <Hero title="Contact" color="orange" />
   <!-- Contact Form -->
+  <ContactForm />
   <!-- Google Maps -->
   <div class="map">
     <div class="container">

@@ -4,7 +4,6 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import services from "../helpers/servicesArr";
 
 const ServiceDropDown = () => {
-  console.log("s", services);
   const [visible, setVisible] = useState([]);
 
   const toggleAnswer = (id) => {
@@ -34,7 +33,6 @@ const ServiceDropDown = () => {
         <TransitionGroup>
           {services.map((service) => (
             <div key={service.id} id={service.id} className="form-group">
-              {console.log("serv", service.id, visible[service.id])}
               <div onClick={() => toggleAnswer(service.id)} className="title">
                 <div className="expand">
                   {visible[service.id] ? "\u2013" : "+"}
