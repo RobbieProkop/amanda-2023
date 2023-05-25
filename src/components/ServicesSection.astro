@@ -42,26 +42,34 @@ import services from "../helpers/servicesArr";
   const overlay = document.getElementById("overlay") as HTMLElement;
 
   //touch elements
-  let touchStartX: number = 0;
-  let touchEndX: number = 0;
-
-  // function to record starting X point
-  const handleTouchStart = (e: TouchEvent) => {
-    touchStartX = e.changedTouches[0].clientX;
-  };
+  let isDragging = false;
+  let startX: number = 0;
+  let endX: number = 0;
 
   const handleSwipeGesture = () => {
-    const swipeThreshold = 1;
-
-    if (Math.abs(touchStartX - touchEndX) < swipeThreshold) return;
-    if (touchStartX > touchEndX) return handleButtonClick(1);
+    const swipeThreshold = 5;
+    if (Math.abs(startX - endX) < swipeThreshold) return;
+    if (startX > endX) return handleButtonClick(1);
     return handleButtonClick(-1);
   };
 
+  // function to record starting X point
+  const handleDragStart = (clientX: number) => {
+    isDragging = true;
+    startX = clientX;
+  };
+
   // function to record ending X point
-  const handleTouchEnd = (e: TouchEvent) => {
-    touchEndX = e.changedTouches[0].clientX;
+  const handleDragEnd = (clientX: number) => {
+    if (!isDragging) return;
+    isDragging = false;
+    endX = clientX;
     handleSwipeGesture();
+  };
+
+  const handleDragMove = (clientX: number) => {
+    if (!isDragging) return;
+    endX = clientX;
   };
 
   // Function to get current number of items per screen.
@@ -74,9 +82,6 @@ import services from "../helpers/servicesArr";
   let currentIndex: number = parseInt(
     getComputedStyle(container).getPropertyValue("--carousel-index")
   );
-
-  overlay.addEventListener("touchstart", handleTouchStart);
-  overlay.addEventListener("touchend", handleTouchEnd);
 
   // Function to calculate and render progress bar.
   const calculateProgressBar = () => {
@@ -119,6 +124,23 @@ import services from "../helpers/servicesArr";
     container.style.setProperty("--carousel-index", currentIndex.toString());
     calculateProgressBar();
   };
+
+  //Event Handlers
+  overlay.addEventListener("touchstart", (e: TouchEvent) =>
+    handleDragStart(e.changedTouches[0].clientX)
+  );
+  overlay.addEventListener("touchend", (e: TouchEvent) =>
+    handleDragEnd(e.changedTouches[0].clientX)
+  );
+  overlay.addEventListener("mousedown", (e: MouseEvent) =>
+    handleDragStart(e.clientX)
+  );
+  overlay.addEventListener("mouseup", (e: MouseEvent) =>
+    handleDragEnd(e.clientX)
+  );
+  overlay.addEventListener("mousemove", (e: MouseEvent) =>
+    handleDragMove(e.clientX)
+  );
 
   // Add event listener for next button click.
   nextBtn.addEventListener("click", () => handleButtonClick(1));

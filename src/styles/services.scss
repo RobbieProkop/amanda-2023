@@ -50,12 +50,9 @@
     }
     .carousel {
       display: flex;
-      // align-items: center;
       width: calc(100% - 2 * 5rem);
       --carousel-index: 0;
       --items-per-screen: 3;
-      // overflow-x: hidden;
-      // scroll-snap-type: x mandatory;
       transform: translateX(calc(var(--carousel-index) * -100%));
       transition: transform 250ms ease-in-out;
 
@@ -64,15 +61,11 @@
       }
 
       .card {
-        // border: 1px solid red;
-
         flex: 0 0 calc(100% / var(--items-per-screen));
         max-width: calc(100% / var(--items-per-screen));
         padding: 2.5rem;
-        // margin-right: 0.5rem;
         display: flex;
         flex-direction: column;
-        // width: 350px;
 
         img {
           width: 100%;
@@ -134,6 +127,16 @@
         // flex-direction: column;
         --items-per-screen: 1;
         width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .services {
+    .container {
+      .carousel-button {
+        display: none;
       }
     }
   }
