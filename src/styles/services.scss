@@ -1,13 +1,14 @@
 @import "variables";
 
 .services {
+  background-color: $background-blue;
   .container {
     text-align: center;
     position: relative;
     overflow-x: hidden;
     padding: 1.5rem;
     @include flex-center();
-    background-color: $background-blue;
+
     flex-direction: column;
     h2 {
       color: $primary-dark;
