@@ -17,6 +17,10 @@
 
     .dhamma {
       margin-top: 5px;
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
 
     .logo {
@@ -29,10 +33,24 @@
     }
 
     .socials {
-      width: 130px;
+      min-width: 230px;
       @include flex-center();
-      img {
-        margin: 0 auto;
+      flex-direction: column;
+      div,
+      a {
+        margin: 5px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 1rem;
+          height: 1.5rem;
+        }
+      }
+      a {
+        &:hover {
+          opacity: 0.6;
+        }
       }
     }
   }
