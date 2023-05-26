@@ -2,7 +2,11 @@
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
-import Reviews from "../components/Reviews.astro";
+import Map from "../components/Map.svelte";
+import "../styles/contact.scss";
+import "leaflet/dist/leaflet.css";
+
+const location = { latitude: 51.0317, longitude: -114.10072 };
 ---
 
 <Layout title="Amanda Prokop RMT">
@@ -10,6 +14,21 @@ import Reviews from "../components/Reviews.astro";
   <Hero title="About" color="orange" />
   <!-- About -->
   <About />
-  <!-- Reviews -->
-  <Reviews />
+
+  <div class="map">
+    <div class="container">
+      <div class="map-content">
+        <h2>Location</h2>
+        <p>Address: 2520 16b St SW, Calgary, AB T2T 4L9</p>
+        <p>Phone: 403 835-0046</p>
+        <p>Email: amandaprokop.rmt@gmail.com</p>
+      </div>
+    </div>
+    <Map
+      client:load
+      location={location}
+      zoom={14}
+      markerMarkup="<a target='_blank' href='https://goo.gl/maps/uzpCVsW9dxGcoGJm6'>Amanda Prokop RMT is here!</a>"
+    />
+  </div>
 </Layout>
