@@ -15,8 +15,9 @@
 
       h2 {
         color: $third;
+        padding-bottom: 1rem;
       }
-      p {
+      p:nth-of-type(2) {
         padding: 0.8rem 0;
       }
     }
