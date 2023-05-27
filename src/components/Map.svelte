@@ -11,14 +11,3 @@
 </script>
 
   <figure use:setMap={{ latitude, longitude, zoom, markerMarkup }} />
-
-
-
-<style>
-  
-  figure {
-    width: 95vw;
-    height: 27rem;
-    
-  }
-</style>
