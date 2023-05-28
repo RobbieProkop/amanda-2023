@@ -8,7 +8,16 @@
     .form {
       display: grid;
       grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+      .image {
+        img {
+          max-width: 400px;
+          max-height: 500px;
+        }
+      }
       form {
+        max-width: 850px;
+
         h2 {
           align-self: flex-start;
           color: $third;
@@ -34,6 +43,11 @@
           padding: 1rem;
           font-family: inherit;
           font-size: 1rem;
+        }
+
+        button {
+          align-self: flex-start;
+          margin-bottom: 2rem;
         }
       }
     }
