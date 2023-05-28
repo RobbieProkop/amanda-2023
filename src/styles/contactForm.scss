@@ -5,21 +5,35 @@
     // @include flex-between();
     padding: 2rem 2rem 0;
 
-    h2 {
-      text-align: center;
-    }
-
     .form {
       display: grid;
       grid-template-columns: 1fr 3fr;
       form {
+        h2 {
+          align-self: flex-start;
+          color: $third;
+        }
         @include flex-center();
         flex-direction: column;
         input,
         textarea {
           margin: 1rem;
-          // width: 50%;width
           width: 100%;
+          font-size: 1rem;
+          border: none;
+          border-radius: 5px;
+          padding-left: 1rem;
+        }
+
+        input {
+          height: 54px;
+        }
+
+        textarea {
+          height: 200px;
+          padding: 1rem;
+          font-family: inherit;
+          font-size: 1rem;
         }
       }
     }
