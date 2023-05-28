@@ -2,12 +2,25 @@
 
 .contact-form {
   .container {
-    @include flex-between();
+    // @include flex-between();
     padding: 2rem 2rem 0;
 
+    h2 {
+      text-align: center;
+    }
+
     .form {
-      input {
-        width: 50%;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      form {
+        @include flex-center();
+        flex-direction: column;
+        input,
+        textarea {
+          margin: 1rem;
+          // width: 50%;width
+          width: 100%;
+        }
       }
     }
   }
