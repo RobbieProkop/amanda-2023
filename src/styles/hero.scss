@@ -7,7 +7,6 @@
 .hero {
   height: 80vh;
   position: relative;
-  margin-top: -5px;
 
   .header-bg {
     display: flex;
@@ -27,7 +26,7 @@
       height: 100%;
       transform: translate(-50%, -50%);
       object-fit: cover;
-      object-position: center;
+      object-position: right;
     }
   }
 
@@ -84,6 +83,25 @@
         img {
           max-width: 25rem;
         }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 50vh;
+    .header-bg {
+      img {
+        object-position: right;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .hero {
+    .header-bg {
+      img {
+        object-position: center;
       }
     }
   }

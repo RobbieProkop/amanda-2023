@@ -7,6 +7,8 @@ export interface Props {
 }
 
 const { page } = Astro.props;
+
+const homepage = page === "homepage";
 ---
 
 <section class="about">
@@ -16,39 +18,54 @@ const { page } = Astro.props;
     </div>
     <div class="text">
       <h2>About Me</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Mi proin sed libero
-        enim sed. At lectus urna duis convallis convallis. Lorem ipsum dolor sit
-        amet. Lacinia at quis risus sed vulputate odio. Egestas pretium aenean
-        pharetra magna ac placerat vestibulum. At lectus urna duis convallis
-        convallis. Lorem ipsum dolor sit amet. Lacinia at quis risus sed
-        vulputate odio.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Mi proin sed libero
-        enim sed. At lectus urna duis convallis convallis. Lorem ipsum dolor sit
-        amet. Lacinia at quis risus sed vulputate odio. Egestas pretium aenean
-        pharetra magna ac placerat vestibulum. At lectus urna duis convallis
-        convallis. Lorem ipsum dolor sit amet. Lacinia at quis risus sed
-        vulputate odio.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Mi proin sed libero
-        enim sed. At lectus urna duis convallis convallis. Lorem ipsum dolor sit
-        amet.
-      </p>
       {
-        page ? (
-          <a href="/about">
-            <button class="btn btn-third">LEARN MORE</button>
-          </a>
+        homepage ? (
+          <>
+            <p>
+              I approach massage from a trauma-informed perspective. For me,
+              creating a safe and soothing environment is essential to my
+              practice. I believe that when people feel safe, they are more open
+              to receiving the benefits of massage.
+            </p>
+            <a href="/about">
+              <button class="btn btn-third">LEARN MORE</button>
+            </a>
+          </>
         ) : (
-          <a href="/contact">
-            <button class="btn btn-third">Contact Us</button>
-          </a>
+          <>
+            <p>
+              I approach massage from a trauma-informed perspective. For me,
+              creating a safe and soothing environment is essential to my
+              practice. I believe that when people feel safe, they are more open
+              to receiving the benefits of massage.
+            </p>
+            <p>
+              My goal is to help connect people back to their bodies through the
+              power of compassionate touch, so they can experience lasting
+              change. I believe that the power of touch can guide the body back
+              into its balanced and secure state, which can be especially
+              beneficial for clients who have experienced trauma. Regular
+              massage provides emotional and psychological support, and
+              decreases feelings of anxiety and social isolation.
+            </p>
+            <p>
+              I customize each treatment to meet the specific needs of my
+              clients. I use a variety of modalities, including massage,
+              cupping, craniosacral therapy, and reiki, to create a personalized
+              experience that supports my clients' healing journey. I believe
+              that every person's body and experiences are unique, so I strive
+              to create a treatment plan that is tailored to each individual.
+            </p>
+            <p>
+              Overall, my approach to massage is rooted in empathy, compassion,
+              and a deep understanding of how the body responds to trauma. I am
+              dedicated to providing a safe and healing space where my clients
+              can experience the transformative power of touch.
+            </p>
+            <a href="/contact">
+              <button class="btn btn-third">Contact Us</button>
+            </a>
+          </>
         )
       }
     </div>
