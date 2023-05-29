@@ -1,10 +1,10 @@
 const services = [
   {
     id: "1",
-    title: "Theraputic Massage",
+    title: "Relaxation Massage",
     photo: "/assets/yuli.jpg",
     value:
-      "This includes a tendency to experience intense anxiety over relatively small things, as well as difficulty with emotional closeness in relationships with others.",
+      "Relaxation massage is a highly effective treatment that can help relieve stress, lethargy, fatigue, and promote an overall sense of well-being. Contrary to popular belief, relaxation massage is not a superficial or gimmicky treatment, but rather a powerful way to promote the body's natural healing process.",
   },
   {
     id: "2",
