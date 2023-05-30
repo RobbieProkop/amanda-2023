@@ -45,6 +45,10 @@ const reviews = await Astro.glob("../helpers/reviews/*.md");
   let isDragging = false;
   let startX: number = 0;
   let endX: number = 0;
+  let progressItemCount: number;
+  let currentIndex: number = parseInt(
+    getComputedStyle(container).getPropertyValue("--carousel-index")
+  );
 
   // Helper function to handle button clicks.
   const handleButtonClick = (increment: number) => {
@@ -79,11 +83,6 @@ const reviews = await Astro.glob("../helpers/reviews/*.md");
     if (!isDragging) return;
     endX = clientX;
   };
-
-  let progressItemCount: number;
-  let currentIndex: number = parseInt(
-    getComputedStyle(container).getPropertyValue("--carousel-index")
-  );
 
   // Function to calculate and render progress bar.
   const calculateProgressBar = () => {
