@@ -1,7 +1,9 @@
 ---
 import "../styles/services.scss";
 import ServiceCard from "../components/ServiceCard.astro";
-import services from "../helpers/servicesArr";
+// import services from "../helpers/servicesArr";
+
+const services = await Astro.glob("../helpers/services/*.md");
 ---
 
 <section class="services">
@@ -13,11 +15,12 @@ import services from "../helpers/servicesArr";
       <div class="carousel" id="carousel-container">
         {
           services.map((service, index) => {
+            const { Content, frontmatter } = service;
             return (
               <ServiceCard
-                photo={service.photo}
-                title={service.title}
-                id={service.id}
+                photo={frontmatter.photo}
+                title={frontmatter.title}
+                id={frontmatter.id}
                 index={index}
               />
             );

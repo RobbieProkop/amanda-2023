@@ -67,6 +67,11 @@
       }
       .btn {
         margin-top: 2rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $third;
+        }
       }
     }
   }

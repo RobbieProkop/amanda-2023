@@ -37,6 +37,13 @@
         cursor: pointer;
       }
     }
+
+    button {
+      &:hover {
+        cursor: pointer;
+        background-color: $third;
+      }
+    }
   }
 
   .toggler {
