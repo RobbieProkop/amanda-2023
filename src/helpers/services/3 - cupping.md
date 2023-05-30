@@ -1,7 +1,7 @@
 ---
 id: 3
 title: Cupping
-photo: /assets/yuli.jpg
+photo: /assets/cupping2.jpeg
 ---
 
 Cupping is a time-tested bodywork technique that can have numerous benefits for the body. By using cups that create a vacuum effect on the skin, cupping therapy can increase local circulation, release muscular tension, and reorganize fascial restrictions.

@@ -1,7 +1,7 @@
 ---
 id: 1
 title: Relaxation Massage
-photo: /assets/yuli.jpg
+photo: /assets/relax.jpeg
 ---
 
 Relaxation massage is a highly effective treatment that can help relieve stress, lethargy, fatigue, and promote an overall sense of well-being. Contrary to popular belief, relaxation massage is not a superficial or gimmicky treatment, but rather a powerful way to promote the body's natural healing process.

@@ -1,38 +1,4 @@
-@import "variables";
-
-.map {
-  @include flex-center();
-  flex-direction: column;
-  .container {
-    // display: flex;
-    // // justify-content: center;
-    // align-items: flex-start;
-    margin: 0;
-    width: 100%;
-    .map-content {
-      align-self: flex-start;
-      padding: 0 2rem 2rem;
-
-      h2 {
-        color: $third;
-        padding-bottom: 1rem;
-      }
-      p:nth-of-type(2) {
-        padding: 0.8rem 0;
-      }
-    }
-  }
-
-  figure {
-    width: 95vw;
-    height: 27rem;
-  }
-}
-@media screen and (max-width: 1400px) {
-  .map {
-    figure {
-      width: 100%;
-      height: 27rem;
-    }
-  }
+body {
+  display: grid;
+  // grid-template-rows: 1fr 5fr 1fr;
 }

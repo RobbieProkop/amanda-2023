@@ -14,9 +14,9 @@
     "@astrojs/svelte": "^2.2.0",
     "add": "^2.0.6",
     "astro": "^2.5.5",
+    "markdown-to-jsx": "^7.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^8.0.7",
     "react-transition-group": "^4.4.5",
     "sass": "^1.62.1",
     "svelte": "^3.59.1"

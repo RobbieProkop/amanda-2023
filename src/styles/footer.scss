@@ -15,9 +15,9 @@
       width: 300px;
     }
 
-    p {
-      font-size: 12px;
-    }
+    // p {
+    //   font-size: 12px;
+    // }
 
     .dhamma {
       margin-top: 5px;
@@ -60,12 +60,20 @@
   }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 850px) {
   .footer {
-    height: 15rem;
+    height: 20rem;
     text-align: center;
     .container {
       flex-direction: column-reverse;
+      .socials {
+        img {
+          display: none;
+        }
+        .social {
+          justify-content: center;
+        }
+      }
       .logo {
         margin: 10px 0;
       }

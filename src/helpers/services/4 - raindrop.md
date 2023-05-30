@@ -1,7 +1,7 @@
 ---
 id: 4
 title: Raindrop Therapy
-photo: /assets/yuli.jpg
+photo: /assets/raindrop.jpeg
 ---
 
 Raindrop therapy is a unique bodywork technique that combines the therapeutic benefits of essential oils with slow, restorative massage. This sensory experience involves the application of ten different essential oils, each with their own unique properties and benefits.

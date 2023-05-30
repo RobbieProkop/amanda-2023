@@ -1,7 +1,7 @@
 ---
 id: 2
 title: Theraputic Massage
-photo: /assets/yuli.jpg
+photo: /assets/theraputic.jpeg
 ---
 
 Therapeutic massage is not a "no pain no gain" treatment. Instead, I focus on slowly working through the layers of tissue, paying close attention to any resistance or tension that may arise. I am patient and allow the tissue to release before going deeper, ensuring that my clients are comfortable and that any discomfort they may feel is the "good" type of pain.

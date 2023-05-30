@@ -3,7 +3,7 @@ import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import Map from "../components/Map.svelte";
-import "../styles/contact.scss";
+import "../styles/map.scss";
 import "leaflet/dist/leaflet.css";
 
 const location = { latitude: 51.0317, longitude: -114.10072 };
@@ -11,9 +11,9 @@ const location = { latitude: 51.0317, longitude: -114.10072 };
 
 <Layout title="Amanda Prokop RMT">
   <!-- Hero -->
-  <Hero title="About" color="orange" />
+  <Hero title="About" color="orange" image="/assets/about.jpeg" />
   <!-- About -->
-  <About />
+  <About image="/assets/about2.jpeg" />
 
   <div class="map">
     <div class="container">

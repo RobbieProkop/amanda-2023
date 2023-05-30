@@ -1,12 +1,13 @@
 ---
 import ContactForm from "../components/ContactForm.astro";
 import Hero from "../components/Hero.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/ContactLayout.astro";
+import "../styles/contact.scss";
 ---
 
 <Layout title="Amanda Prokop RMT">
   <!-- Hero -->
-  <Hero title="Contact" color="third" />
+  <Hero title="Contact" color="third" image="/assets/contactBig.jpeg" />
   <!-- Contact Form -->
   <ContactForm />
   <!-- Google Maps -->

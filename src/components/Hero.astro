@@ -3,14 +3,16 @@ export interface Props {
   title: string;
   page?: string;
   color: string;
+  image: string;
 }
 import "../styles/hero.scss";
-import headerBgAVIF from "/assets/avif/amanda-massage.avif";
-import headerBg from "/assets/webp/amanda-massage.webp";
+// import headerBgAVIF from "/assets/avif/reiki.avif";
+import headerBg from "/assets/webp/reiki.webp";
+// import headerBg from "/assets/reiki.jpeg";
 // import headerBg from "/assets/amanda-massage.jpeg";
 import logo from "/assets/webp/APPrimaryOrange.webp";
 
-const { title, page, color } = Astro.props;
+const { title, page, color, image } = Astro.props;
 const homepage = page === "homepage" ? true : false;
 ---
 
@@ -18,17 +20,17 @@ const homepage = page === "homepage" ? true : false;
   <div class="header-bg">
     <!-- <img src={headerBg} alt="header background image" loading="eager" /> -->
     <picture>
-      <source
+      <!-- <source
         type="image/avif"
         srcset="
-    /assets/avif/amanda-massage.avif?width=100 100w,
-    /assets/avif/amanda-massage.avif?width=200 200w,
-    /assets/avif/amanda-massage.avif?width=400 400w,
-    /assets/avif/amanda-massage.avif?width=800 800w,
+    /assets/avif/reiki.avif?width=100 100w,
+    /assets/avif/reiki.avif?width=200 200w,
+    /assets/avif/reiki.avif?width=400 400w,
+    /assets/avif/reiki.avif?width=800 800w,
     "
-      />
+      /> -->
       <img
-        src={headerBg}
+        src={image}
         alt="header background image"
         loading="eager"
         role="presentation"
