@@ -14,6 +14,10 @@
       color: $secondary;
     }
 
+    .overlay {
+      width: 100%;
+    }
+
     .scroll-container {
       display: flex;
       width: calc(100% - 2 * 5rem);
