@@ -1,7 +1,8 @@
 import "../styles/serviceDropDown.scss";
 import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
+
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import relax from "../helpers/services/1 - relaxation.md";
 // import services from "../helpers/servicesArr";
 
 const ServiceDropDown = ({ services }) => {
@@ -33,9 +34,9 @@ const ServiceDropDown = ({ services }) => {
       <div className="container">
         <TransitionGroup>
           {services.map((service) => {
-            const { Content, frontmatter } = service;
+            const { frontmatter } = service;
+            console.log("v", frontmatter.value);
 
-            String;
             return (
               <div
                 key={frontmatter.id}
@@ -51,15 +52,18 @@ const ServiceDropDown = ({ services }) => {
                   </div>
                   <h2>{frontmatter.title}</h2>
                 </div>
-                <CSSTransition
-                  in={visible[frontmatter.id]}
-                  timeout={1000}
-                  classNames="transition"
-                >
-                  <p className={visible[frontmatter.id] ? "" : "p"}>
-                    <ReactMarkdown source={Content} />
-                  </p>
-                </CSSTransition>
+
+                {frontmatter.value.map((value) => (
+                  <CSSTransition
+                    in={visible[frontmatter.id]}
+                    timeout={1000}
+                    classNames="transition"
+                  >
+                    <p className={visible[frontmatter.id] ? "" : "p"}>
+                      {value}
+                    </p>
+                  </CSSTransition>
+                ))}
               </div>
             );
           })}
