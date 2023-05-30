@@ -31,10 +31,12 @@
       &.prev {
         transform: translateY(-50%) rotate(180deg);
         left: 0;
+        margin-left: 0.5rem;
       }
 
       &.next {
         right: 0;
+        margin-right: 0.5rem;
       }
 
       &:hover {
@@ -125,6 +127,9 @@
 @media screen and (max-width: 650px) {
   .services {
     .container {
+      .carousel-button {
+        display: none;
+      }
       .carousel {
         // flex-direction: column;
         --items-per-screen: 1;
