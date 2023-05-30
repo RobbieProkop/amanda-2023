@@ -2,6 +2,9 @@
 
 .about {
   padding: 2rem;
+  &.background {
+    background-color: $background-blue;
+  }
   .container {
     @include flex-center();
     grid-gap: 2rem;

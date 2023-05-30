@@ -1,25 +1,116 @@
 ---
+import { map } from "leaflet";
 import "../styles/reviews.scss";
-import reviews from "../helpers/reviews";
+// import reviews from "../helpers/reviews";
+
+const reviews = await Astro.glob("../helpers/reviews/*.md");
 ---
 
 <section class="reviews">
   <div class="container">
     <h2>Kind Words</h2>
-    <div class="text">
+    <div class="scroll-container" id="scroll-container">
       {
         reviews.map((review) => {
+          const { Content, frontmatter } = review;
           return (
             <>
-              <div class="review">
-                <p>{review.value}</p>
-                <h4>{review.name}</h4>
-              </div>
+              <article class="review-container">
+                <div class="review-item">
+                  <Content />
+                  <h4>{frontmatter.name}</h4>
+                </div>
+              </article>
             </>
           );
         })
       }
     </div>
+    <div class="progress-bar" id="review-progress"></div>
     <a href="/contact"><button class="btn btn-third">BOOK NOW</button></a>
   </div>
 </section>
+
+<script>
+  const container = document.getElementById("scroll-container") as HTMLElement;
+  const reviews = document.querySelectorAll(
+    ".review-container"
+  ) as NodeListOf<Element>;
+  const progress = document.getElementById("review-progress") as HTMLElement;
+
+  let progressItemCount: number;
+  let currentIndex: number = parseInt(
+    getComputedStyle(container).getPropertyValue("--carousel-index")
+  );
+
+  // Function to calculate and render progress bar.
+  const calculateProgressBar = () => {
+    progressItemCount = container.children.length;
+
+    progress.innerHTML = ""; // Clear current progress bar.
+
+    // Create new progress bar items.
+    for (let i = 0; i < progressItemCount; i++) {
+      const barItem = document.createElement("div");
+      barItem.classList.add("progress-item");
+      barItem.setAttribute("data-index", i.toString());
+      if (i === currentIndex) barItem.classList.add("active");
+      progress.append(barItem);
+    }
+  };
+
+  // Add event listener for click events on the progress bar.
+  progress.addEventListener("click", (e) => {
+    const target = e.target as HTMLDivElement;
+    const index = target.getAttribute("data-index");
+    if (!index) return;
+
+    currentIndex = parseInt(index);
+    container.style.setProperty("--carousel-index", currentIndex.toString());
+    calculateProgressBar();
+  });
+
+  // Call the function to initialize the progress bar.
+  calculateProgressBar();
+
+  function scrollToNextReview() {
+    const currentReviewIndex = Math.round(
+      (container.scrollLeft / container.scrollWidth) * reviews.length
+    );
+    if (currentReviewIndex === reviews.length - 1) {
+      container.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+    if (currentReviewIndex < reviews.length - 1) {
+      container.scrollTo({
+        left:
+          (container.scrollWidth / reviews.length) * (currentReviewIndex + 1),
+        behavior: "smooth",
+      });
+    }
+  }
+
+  function scrollToPrevReview() {
+    const currentReviewIndex = Math.round(
+      (container.scrollLeft / container.scrollWidth) * reviews.length
+    );
+    if (currentReviewIndex === 0) {
+      container.scrollTo({
+        left: (container.scrollWidth / reviews.length) * (reviews.length - 1),
+        behavior: "smooth",
+      });
+    }
+    if (currentReviewIndex > 0) {
+      container.scrollTo({
+        left:
+          (container.scrollWidth / reviews.length) * (currentReviewIndex - 1),
+        behavior: "smooth",
+      });
+    }
+  }
+
+  // nextBtn.addEventListener("click", scrollToNextReview);
+  // prevBtn.addEventListener("click", scrollToPrevReview);
+</script>

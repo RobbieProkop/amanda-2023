@@ -11,7 +11,7 @@
   background-color: $primary;
   height: 77px;
   justify-content: space-between;
-  z-index: 100;
+  z-index: 1000;
   position: sticky;
   top: 0;
 
@@ -19,7 +19,7 @@
     position: relative;
     height: 73px;
     width: 73px;
-    z-index: 100;
+    z-index: 1000;
     &:hover {
       cursor: pointer;
     }

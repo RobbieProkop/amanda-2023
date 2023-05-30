@@ -1,7 +1,6 @@
 @import "variables";
 
 .services {
-  background-color: $background-blue;
   .container {
     text-align: center;
     position: relative;
@@ -16,7 +15,7 @@
     .carousel-button {
       position: absolute;
       @include flex-center();
-      z-index: 1000;
+      z-index: 500;
       top: 50%;
       transform: translateY(-50%);
       font-size: 3rem;

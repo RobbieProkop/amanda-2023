@@ -4,15 +4,16 @@ import photo from "/assets/about-image.jpeg";
 
 export interface Props {
   page?: string;
+  background?: boolean;
   image: string;
 }
 
-const { page, image } = Astro.props;
+const { page, image, background } = Astro.props;
 
 const homepage = page === "homepage";
 ---
 
-<section class="about">
+<section class={background ? "about background" : "about"}>
   <div class="container">
     <div class="image">
       <img src={image} alt="" />

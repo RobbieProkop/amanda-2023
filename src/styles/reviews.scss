@@ -1,14 +1,69 @@
+@import "variables";
+
 .reviews {
+  margin-bottom: 2rem;
+
   .container {
     padding: 2rem;
     text-align: center;
-    .text {
-      text-align: left;
+    position: relative;
+    overflow-x: hidden;
+    padding: 1.5rem;
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    .scroll-container {
       display: flex;
-      align-items: center;
-      overflow-x: hidden;
-      .review {
-        border: 1px solid red;
+      width: calc(100% - 2 * 5rem);
+      --carousel-index: 0;
+      --items-per-screen: 1;
+      transform: translateX(calc(var(--carousel-index) * (-100% - 10rem)));
+      transition: transform 250ms ease-in-out;
+      margin: auto;
+      font-size: 20px;
+
+      .review-container {
+        @include flex-center;
+
+        flex: 0 0 100%;
+        width: 100%;
+        margin-right: 10rem;
+        flex-direction: column;
+
+        .review-item {
+          @include flex-center();
+          flex-direction: column;
+          max-width: 600px;
+          height: 373px;
+          background-color: rgba(186, 157, 47, 0.2);
+          border-radius: 25px;
+          padding: 3rem;
+          p {
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+    .progress-bar {
+      @include flex-center();
+      gap: 0.25rem;
+
+      .progress-item {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin: 2rem 0;
+
+        &.active {
+          // background-color: rgba(0, 0, 0, 0.5);
+          background-color: $orange;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
