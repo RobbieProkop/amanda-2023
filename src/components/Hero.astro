@@ -2,6 +2,7 @@
 export interface Props {
   title: string;
   page?: string;
+  overlay?: boolean;
   color: string;
   image: string;
 }
@@ -12,11 +13,12 @@ import headerBg from "/assets/webp/reiki.webp";
 // import headerBg from "/assets/amanda-massage.jpeg";
 import logo from "/assets/webp/APPrimaryOrange.webp";
 
-const { title, page, color, image } = Astro.props;
+const { title, page, color, image, overlay } = Astro.props;
 const homepage = page === "homepage" ? true : false;
 ---
 
 <section class="hero">
+  {overlay && <div class="overlay" />}
   <div class="header-bg">
     <!-- <img src={headerBg} alt="header background image" loading="eager" /> -->
     <picture>
