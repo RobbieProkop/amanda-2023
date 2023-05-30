@@ -66,10 +66,15 @@
       .card {
         flex: 0 0 calc(100% / var(--items-per-screen));
         max-width: calc(100% / var(--items-per-screen));
+        --card-margin: 0;
+        margin: var(--card-margin);
         padding: 2.5rem;
         display: flex;
         flex-direction: column;
 
+        &.margin-right {
+          margin-right: 5rem;
+        }
         img {
           width: 100%;
           aspect-ratio: 3/4;

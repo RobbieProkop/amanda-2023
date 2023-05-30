@@ -43,11 +43,20 @@ const services = await Astro.glob("../helpers/services/*.md");
   const nextBtn = document.getElementById("next") as HTMLElement;
   const prevBtn = document.getElementById("prev") as HTMLElement;
   const overlay = document.getElementById("overlay") as HTMLElement;
+  const cards = document.querySelectorAll(".card") as NodeListOf<Element>;
+  const cardsArray = Array.from(cards);
 
   //touch elements
   let isDragging = false;
   let startX: number = 0;
   let endX: number = 0;
+  let progressItemCount: number;
+  let currentIndex: number = parseInt(
+    getComputedStyle(container).getPropertyValue("--carousel-index")
+  );
+  console.log("index", currentIndex);
+  console.log("cards", cards);
+  // let cardMargin: number =
 
   const handleSwipeGesture = () => {
     const swipeThreshold = 5;
@@ -81,15 +90,16 @@ const services = await Astro.glob("../helpers/services/*.md");
       getComputedStyle(container).getPropertyValue("--items-per-screen")
     );
 
-  let progressItemCount: number;
-  let currentIndex: number = parseInt(
-    getComputedStyle(container).getPropertyValue("--carousel-index")
-  );
-
   // Function to calculate and render progress bar.
   const calculateProgressBar = () => {
     const itemsPerScreen = getItemsPerScreen();
     progressItemCount = Math.ceil(container.children.length / itemsPerScreen);
+
+    // const valueRight = itemsPerScreen - 1;
+    // const valueLeft = itemsPerScreen - 1;
+    // console.log("cardssss", cardsArray[valueRight]);
+    // cardsArray[valueRight].classList.add("margin-right");
+    // cardsArray[value].setAttribute("--card-margin", "10rem");
 
     progress.innerHTML = ""; // Clear current progress bar.
 
