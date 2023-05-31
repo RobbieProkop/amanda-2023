@@ -112,7 +112,6 @@
         margin: 2rem 0;
 
         &.active {
-          // background-color: rgba(0, 0, 0, 0.5);
           background-color: $orange;
         }
 
@@ -137,10 +136,12 @@
   .services {
     .container {
       .carousel-button {
-        display: none;
+        font-size: 2rem;
+        &.left {
+          margin: 0;
+        }
       }
       .carousel {
-        // flex-direction: column;
         --items-per-screen: 1;
         width: 100%;
 
@@ -149,16 +150,6 @@
             margin-top: 1rem;
           }
         }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .services {
-    .container {
-      .carousel-button {
-        display: none;
       }
     }
   }

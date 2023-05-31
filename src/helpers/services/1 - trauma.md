@@ -1,7 +1,7 @@
 ---
 id: 5
 title: Trauma-Informed Massage
-photo: /assets/trauma2.jpeg
+photo: /assets/trauma.jpeg
 value:
   [
     "At the heart of my massage therapy practice is a deep commitment to providing trauma-informed care to all of my clients. With specialized training and experience, I have developed a unique approach to bodywork that is specifically tailored to meet the needs of individuals who have experienced trauma.",

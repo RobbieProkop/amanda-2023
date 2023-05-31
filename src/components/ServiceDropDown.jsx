@@ -35,8 +35,6 @@ const ServiceDropDown = ({ services }) => {
         <TransitionGroup>
           {services.map((service) => {
             const { frontmatter } = service;
-            console.log("v", frontmatter.value);
-
             return (
               <div
                 key={frontmatter.id}

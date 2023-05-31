@@ -54,8 +54,6 @@ const services = await Astro.glob("../helpers/services/*.md");
   let currentIndex: number = parseInt(
     getComputedStyle(container).getPropertyValue("--carousel-index")
   );
-  console.log("index", currentIndex);
-  console.log("cards", cards);
   // let cardMargin: number =
 
   const handleSwipeGesture = () => {
@@ -97,7 +95,6 @@ const services = await Astro.glob("../helpers/services/*.md");
 
     // const valueRight = itemsPerScreen - 1;
     // const valueLeft = itemsPerScreen - 1;
-    // console.log("cardssss", cardsArray[valueRight]);
     // cardsArray[valueRight].classList.add("margin-right");
     // cardsArray[value].setAttribute("--card-margin", "10rem");
 
