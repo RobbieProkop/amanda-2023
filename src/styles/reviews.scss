@@ -18,6 +18,10 @@
       width: 100%;
     }
 
+    button {
+      background-color: $secondary;
+    }
+
     .scroll-container {
       display: flex;
       width: calc(100% - 2 * 5rem);
@@ -29,7 +33,7 @@
       font-size: 20px;
 
       .review-container {
-        @include flex-center;
+        @include flex-center();
 
         flex: 0 0 100%;
         width: 100%;
