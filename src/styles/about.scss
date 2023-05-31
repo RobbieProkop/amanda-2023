@@ -43,6 +43,9 @@
   .about {
     .container {
       flex-direction: column;
+      .text {
+        align-items: center;
+      }
     }
   }
 }
