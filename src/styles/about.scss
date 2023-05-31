@@ -43,6 +43,9 @@
   .about {
     .container {
       flex-direction: column;
+      .text {
+        align-items: center;
+      }
     }
   }
 }
@@ -52,6 +55,17 @@
     .container {
       .text {
         padding: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .about {
+    .container {
+      .image {
+        img {
+          max-width: 275px;
+        }
       }
     }
   }

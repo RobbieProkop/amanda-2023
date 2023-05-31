@@ -59,7 +59,7 @@ const reviews = await Astro.glob("../helpers/reviews/*.md");
   };
 
   const handleSwipeGesture = () => {
-    const swipeThreshold = 5;
+    const swipeThreshold = 15;
     if (Math.abs(startX - endX) < swipeThreshold) return;
     if (startX > endX) return handleButtonClick(1);
     return handleButtonClick(-1);

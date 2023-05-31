@@ -73,3 +73,48 @@
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .reviews {
+    .container {
+      .scroll-container {
+        width: unset;
+        .review-container {
+          .review-item {
+            width: 500px;
+            height: 450px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 520px) {
+  .reviews {
+    .container {
+      .scroll-container {
+        .review-container {
+          .review-item {
+            width: 100%;
+            height: 450px;
+            padding: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .reviews {
+    .container {
+      .scroll-container {
+        .review-container {
+          .review-item {
+            height: 600px;
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
