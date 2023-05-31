@@ -71,3 +71,17 @@
     }
   }
 }
+
+@media screen and (max-width: 400px) {
+  .serviceDropDown {
+    .container {
+      .form-group {
+        .title {
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
