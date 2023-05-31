@@ -55,3 +55,36 @@
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .contact-form {
+    .container {
+      .form {
+        display: flex;
+        flex-direction: column;
+        .image {
+          @include flex-center();
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .contact-form {
+    margin-bottom: 2rem;
+    .container {
+      padding: 1rem;
+      .form {
+        .image {
+          img {
+            max-width: 250px;
+          }
+        }
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
