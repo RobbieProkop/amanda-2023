@@ -59,7 +59,7 @@ const services = await Astro.glob("../helpers/services/*.md");
   // let cardMargin: number =
 
   const handleSwipeGesture = () => {
-    const swipeThreshold = 5;
+    const swipeThreshold = 15;
     if (Math.abs(startX - endX) < swipeThreshold) return;
     if (startX > endX) return handleButtonClick(1);
     return handleButtonClick(-1);
