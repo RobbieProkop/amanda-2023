@@ -9,7 +9,7 @@ const services = await Astro.glob("../helpers/services/*.md");
 
 <Layout title="Amanda Prokop RMT">
   <!-- Hero -->
-  <Hero title="Services" color="third" image="assets/services2.jpeg" />
+  <Hero title="Services" color="orange" image="assets/servicesHero.jpeg" overlay={true} />
   <!-- Services -->
 
   <ServiceDropDown client:load services={services} />

@@ -2,7 +2,7 @@ import "../styles/serviceDropDown.scss";
 import { useEffect, useState } from "react";
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import relax from "../helpers/services/1 - relaxation.md";
+import relax from "../helpers/services/2 - relaxation.md";
 // import services from "../helpers/servicesArr";
 
 const ServiceDropDown = ({ services }) => {
