@@ -84,10 +84,10 @@
           @include flex-between();
           flex-direction: column;
           height: 100%;
+
           h3 {
             font-size: 1.5rem;
             margin-top: auto;
-            // margin: 1rem 0;
           }
           a {
             margin-top: 1rem;
@@ -138,6 +138,12 @@
         // flex-direction: column;
         --items-per-screen: 1;
         width: 100%;
+
+        .card {
+          .card-content {
+            margin-top: 1rem;
+          }
+        }
       }
     }
   }
