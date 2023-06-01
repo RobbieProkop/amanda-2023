@@ -1,15 +1,17 @@
 ---
-import logo from "/assets/APmono_orange.png";
+import logo from "/assets/webp/APmono_orange.webp";
 import "../styles/header.scss";
 
 // const homepage = Astro.url.searchParams.get("/")
 ---
 
 <header class="header">
-  <div><a href="/"><img src={logo} alt="A.P initials logo" /></a></div>
+  <div><a href="/"><img src={logo} alt="A.P initials logo"  loading="eager"
+    fetchpriority="high"
+    decoding="async"/></a></div>
 
   <ul id="desktop-menu" class="flex-right">
-    <a id="home"  href="/"><li class="item">HOME</li></a>
+    <a id="home" href="/"><li class="item">HOME</li></a>
     <a href="/about"><li class="item">ABOUT</li></a>
     <a href="/services"><li class="item">SERVICES</li></a>
     <a href="/contact"><li class="item">CONTACT</li></a>
@@ -43,7 +45,6 @@ import "../styles/header.scss";
   const open = document.getElementById("open-menu") as HTMLInputElement;
   const hamberger = document.getElementById("hamberger") as HTMLElement;
   const desktopMenu = document.getElementById("desktop-menu") as HTMLElement;
-  const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
 
   const homepage = window.location.href.split("/");
   if (homepage[3]) {
@@ -77,7 +78,6 @@ import "../styles/header.scss";
   window.addEventListener("resize", () => resize());
 
   open.addEventListener("click", () => {
-    
     // open.classList.toggle("active")
     // hamberger.classList.toggle("active")
     // mobileMenu.classList.toggle("hidden");

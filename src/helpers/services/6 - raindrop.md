@@ -1,7 +1,7 @@
 ---
 id: 6
 title: Raindrop Therapy
-photo: /assets/rain.JPG
+photo: /assets/webp/rain.webp
 value:
   [
     "60 min - $110 | 90 min - $140","Raindrop therapy is a unique bodywork technique that combines the therapeutic benefits of essential oils with slow, restorative massage. This sensory experience involves the application of ten different essential oils, each with their own unique properties and benefits.",

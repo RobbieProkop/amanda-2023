@@ -1,7 +1,7 @@
 ---
 id: 1
 title: Trauma-Informed Massage
-photo: /assets/trauma.jpeg
+photo: /assets/webp/trauma.webp
 value:
   [
     "60 min - $100 | 75 min - $115 | 90 min - $130","At the heart of my massage therapy practice is a deep commitment to providing trauma-informed care to all of my clients. With specialized training and experience, I have developed a unique approach to bodywork that is specifically tailored to meet the needs of individuals who have experienced trauma.",

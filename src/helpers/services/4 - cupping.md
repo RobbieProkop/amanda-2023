@@ -1,7 +1,7 @@
 ---
 id: 4
 title: Cupping
-photo: /assets/cupping2.jpeg
+photo: /assets/webp/cupping.webp
 value:
   [
     "60 min - $100 | 75 min - $115 | 90 min - $130","Cupping is a time-tested bodywork technique that can have numerous benefits for the body. By using cups that create a vacuum effect on the skin, cupping therapy can increase local circulation, release muscular tension, and reorganize fascial restrictions.",

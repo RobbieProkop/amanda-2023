@@ -1,7 +1,7 @@
 ---
 id: 2
 title: Relaxation Massage
-photo: /assets/relax.jpeg
+photo: /assets/webp/relax.webp
 value:
   [
     "60 - $100 | 75 - $115 | 90 - $130","Relaxation massage is a highly effective treatment that can help relieve stress, lethargy, fatigue, and promote an overall sense of well-being. Contrary to popular belief, relaxation massage is not a superficial or gimmicky treatment, but rather a powerful way to promote the body's natural healing process.",

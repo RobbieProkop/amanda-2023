@@ -1,7 +1,7 @@
 ---
 id: 3
 title: Therapeutic Massage
-photo: /assets/theraputic.jpeg
+photo: /assets/webp/therapeutic.webp
 value:
   [
     "60 min - $100 | 75 min - $115 | 90 min - $130",'Therapeutic massage is not a "no pain no gain" treatment. Instead, I focus on slowly working through the layers of tissue, paying close attention to any resistance or tension that may arise. I am patient and allow the tissue to release before going deeper, ensuring that my clients are comfortable and that any discomfort they may feel is the "good" type of pain.',
