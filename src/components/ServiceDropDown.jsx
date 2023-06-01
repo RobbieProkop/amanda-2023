@@ -51,8 +51,9 @@ const ServiceDropDown = ({ services }) => {
                   <h2>{frontmatter.title}</h2>
                 </div>
 
-                {frontmatter.value.map((value) => (
+                {frontmatter.value.map((value, index) => (
                   <CSSTransition
+                    key={index}
                     in={visible[frontmatter.id]}
                     timeout={1000}
                     classNames="transition"
