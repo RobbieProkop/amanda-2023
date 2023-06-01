@@ -5,6 +5,8 @@
   font-style: normal;
 }
 
+
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 
 @mixin flex-center() {
@@ -44,3 +46,4 @@ $black: #000;
 $white: #fff;
 $primary-font: "Glafton", Arial, Helvetica, sans-serif;
 $secondary-font: "Montserrat", Arial, Helvetica, sans-serif;
+$mobile-glafton: "Glafton", Arial, Helvetica, sans-serif;
