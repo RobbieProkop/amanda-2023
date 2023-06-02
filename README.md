@@ -5,13 +5,13 @@
 
 ## Home Page
 
-![Home Page Image](https://github.com/RobbieProkop/amanda-2023/blob/updates/public/assets/originals/Screenshot%202023-05-31%20at%2016.56.43.png)
+![Home Page Image](https://github.com/RobbieProkop/amanda-2023/blob/master/public/assets/originals/Screenshot%202023-05-31%20at%2016.56.43.png)
 
 ## About
-![About Page Image](https://github.com/RobbieProkop/amanda-2023/blob/updates/public/assets/originals/about.png)
+![About Page Image](https://github.com/RobbieProkop/amanda-2023/blob/master/public/assets/originals/about.png)
 
 ## Services
-![Home Page Image](https://github.com/RobbieProkop/amanda-2023/blob/updates/public/assets/originals/services.png)
+![Home Page Image](https://github.com/RobbieProkop/amanda-2023/blob/master/public/assets/originals/services.png)
 
 ## Contact
-![Home Page Image](https://github.com/RobbieProkop/amanda-2023/blob/updates/public/assets/originals/contact.png)
+![Home Page Image](https://github.com/RobbieProkop/amanda-2023/blob/master/public/assets/originals/contact.png)
