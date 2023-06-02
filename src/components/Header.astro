@@ -6,15 +6,23 @@ import "../styles/header.scss";
 ---
 
 <header class="header">
-  <div><a href="/"><img src={logo} alt="A.P initials logo"  loading="eager"
-    fetchpriority="high"
-    decoding="async"/></a></div>
+  <div>
+    <a href="/"
+      ><img
+        src={logo}
+        alt="A.P initials logo"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      /></a
+    >
+  </div>
 
   <ul id="desktop-menu" class="flex-right">
-    <a id="home" href="/"><li class="item">HOME</li></a>
-    <a href="/about"><li class="item">ABOUT</li></a>
-    <a href="/services"><li class="item">SERVICES</li></a>
-    <a href="/contact"><li class="item">CONTACT</li></a>
+    <li class="item"><a id="home" href="/">HOME</a></li>
+    <li class="item"><a href="/about">ABOUT</a></li>
+    <li class="item"><a href="/services">SERVICES</a></li>
+    <li class="item"><a href="/contact">CONTACT</a></li>
     <a
       href="https://amandaprokop.janeapp.com/#staff_member/1"
       target="_blank"
@@ -27,10 +35,10 @@ import "../styles/header.scss";
 
   <div id="mobile-menu" class="menu">
     <ul>
-      <a id="home" class="hidden" href="/"><li class="item">HOME</li></a>
-      <a href="/about"><li class="item">ABOUT</li></a>
-      <a href="/services"><li class="item">SERVICES</li></a>
-      <a href="/contact"><li class="item">CONTACT</li></a>
+      <li class="item"><a href="/" id="home" class="hidden">HOME</a></li>
+      <li class="item"><a href="/about">ABOUT</a></li>
+      <li class="item"><a href="/services">SERVICES</a></li>
+      <li class="item"><a href="/contact">CONTACT</a></li>
       <a
         href="https://amandaprokop.janeapp.com/#staff_member/1"
         target="_blank"
@@ -41,16 +49,16 @@ import "../styles/header.scss";
 </header>
 
 <script>
-  const home = document.getElementById("home") as HTMLInputElement;
+  const home = document.querySelectorAll("#home") as NodeListOf<Element>;
   const open = document.getElementById("open-menu") as HTMLInputElement;
   const hamberger = document.getElementById("hamberger") as HTMLElement;
   const desktopMenu = document.getElementById("desktop-menu") as HTMLElement;
 
   const homepage = window.location.href.split("/");
   if (homepage[3]) {
-    home.classList.remove("hidden");
+    home.forEach((homeBtn) => homeBtn.classList.remove("hidden"));
   } else {
-    home.classList.add("hidden");
+    home.forEach((homeBtn) => homeBtn.classList.add("hidden"));
   }
 
   //check initial window size
