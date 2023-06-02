@@ -19,7 +19,7 @@ const reviews = await Astro.glob("../helpers/reviews/*.md");
                 <article class="review-container">
                   <div class="review-item">
                     <Content />
-                    <h4>{frontmatter.name}</h4>
+                    <h3>{frontmatter.name}</h3>
                   </div>
                 </article>
               </>
@@ -29,8 +29,9 @@ const reviews = await Astro.glob("../helpers/reviews/*.md");
       </div>
     </div>
     <div class="progress-bar" id="review-progress"></div>
-    <a href="https://amandaprokop.janeapp.com/#staff_member/1"
-    target="_blank"><button class="btn btn-third">BOOK NOW</button></a>
+    <a href="https://amandaprokop.janeapp.com/#staff_member/1" target="_blank"
+      ><button class="btn btn-third">BOOK NOW</button></a
+    >
   </div>
 </section>
 

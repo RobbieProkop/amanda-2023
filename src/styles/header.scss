@@ -133,7 +133,15 @@
       font-size: 0;
       opacity: 0;
       color: $background;
-      transition: color ease-in-out 0.2s;
+      
+      a {
+        transition: color ease-in-out 0.2s;
+        color: $secondary;
+
+        &:hover {
+          color: $primary;
+        }
+      }
 
       &.btn {
         background: none;

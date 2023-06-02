@@ -5,7 +5,7 @@
 }
 
 .hero {
-  height: 60vh;
+  min-height: 60vh;
   position: relative;
 
   .overlay {
@@ -139,6 +139,19 @@
       .logo-container {
         img {
           max-width: 15rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 696px) {
+  .hero {
+    height: 80vh;
+    .container {
+      .logo-container {
+        img {
+          max-width: 20rem;
         }
       }
     }

@@ -1,6 +1,5 @@
 ---
 import "../styles/about.scss";
-import photo from "/assets/about-image.jpeg";
 
 export interface Props {
   page?: string;
@@ -16,10 +15,10 @@ const homepage = page === "homepage";
 <section class={background ? "about background" : "about"}>
   <div class="container">
     <div class="image">
-      <img src={image} alt="" />
+      <img src={image} alt="Amanda-Headshot" loading="eager" />
     </div>
     <div class="text">
-      <h2>About Me</h2>
+      <h2>About Me <span>(She/Her)</span></h2>
       {
         homepage ? (
           <>

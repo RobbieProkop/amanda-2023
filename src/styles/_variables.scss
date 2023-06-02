@@ -1,6 +1,8 @@
 @font-face {
-  font-family: "Glafton, Arial, Helvetica, sans-serif";
-  src: url("/assets/fonts/Glafton/GlaftonFont.woff2") format("woff2");
+  font-family: "Glafton";
+  src: url("/assets/fonts/Glafton/GlaftonFont.woff2") format("woff2"),
+  url("/assets/fonts/Glafton/GlaftonFont.woff") format("woff"),
+  url("/assets/fonts/Glafton/GlaftonFont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -46,4 +48,3 @@ $black: #000;
 $white: #fff;
 $primary-font: "Glafton", Arial, Helvetica, sans-serif;
 $secondary-font: "Montserrat", Arial, Helvetica, sans-serif;
-$mobile-glafton: "Glafton", Arial, Helvetica, sans-serif;
