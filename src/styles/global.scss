@@ -85,3 +85,11 @@ h2 {
 .hidden {
   display: none !important;
 }
+
+
+@media screen and (max-width: 500px) {
+  h2, 
+  h3 {
+    font-family: $mobile-glafton;
+  }
+}

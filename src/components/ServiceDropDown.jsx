@@ -2,7 +2,7 @@ import "../styles/serviceDropDown.scss";
 import { useEffect, useState } from "react";
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import relax from "../helpers/services/1 - relaxation.md";
+import relax from "../helpers/services/2 - relaxation.md";
 // import services from "../helpers/servicesArr";
 
 const ServiceDropDown = ({ services }) => {
@@ -35,8 +35,6 @@ const ServiceDropDown = ({ services }) => {
         <TransitionGroup>
           {services.map((service) => {
             const { frontmatter } = service;
-            console.log("v", frontmatter.value);
-
             return (
               <div
                 key={frontmatter.id}
@@ -53,8 +51,9 @@ const ServiceDropDown = ({ services }) => {
                   <h2>{frontmatter.title}</h2>
                 </div>
 
-                {frontmatter.value.map((value) => (
+                {frontmatter.value.map((value, index) => (
                   <CSSTransition
+                    key={index}
                     in={visible[frontmatter.id]}
                     timeout={1000}
                     classNames="transition"

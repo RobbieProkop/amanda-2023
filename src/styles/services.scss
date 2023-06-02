@@ -72,6 +72,8 @@
         display: flex;
         flex-direction: column;
 
+        
+
         &.margin-right {
           margin-right: 5rem;
         }
@@ -84,10 +86,13 @@
           @include flex-between();
           flex-direction: column;
           height: 100%;
+
           h3 {
             font-size: 1.5rem;
             margin-top: auto;
-            // margin: 1rem 0;
+            &:nth-of-type(1) {
+              margin-top: 2rem;
+            }
           }
           a {
             margin-top: 1rem;
@@ -107,7 +112,6 @@
         margin: 2rem 0;
 
         &.active {
-          // background-color: rgba(0, 0, 0, 0.5);
           background-color: $orange;
         }
 
@@ -132,22 +136,20 @@
   .services {
     .container {
       .carousel-button {
-        display: none;
+        font-size: 2rem;
+        &.left {
+          margin: 0;
+        }
       }
       .carousel {
-        // flex-direction: column;
         --items-per-screen: 1;
         width: 100%;
-      }
-    }
-  }
-}
 
-@media screen and (max-width: 450px) {
-  .services {
-    .container {
-      .carousel-button {
-        display: none;
+        .card {
+          .card-content {
+            margin-top: 1rem;
+          }
+        }
       }
     }
   }
