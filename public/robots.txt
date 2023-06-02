@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amandaprokop.com/sitemap-index.xml
