@@ -31,12 +31,12 @@
 
       &.prev {
         transform: translateY(-50%) rotate(180deg);
-        left: 0;
+        left: 20%;
         margin-left: 0.5rem;
       }
 
       &.next {
-        right: 0;
+        right: 20%;
         margin-right: 0.5rem;
       }
 
@@ -130,9 +130,46 @@
   }
 }
 
+@media screen and (max-width: 1230px) {
+  .reviews {
+    .container {
+      .carousel-button{
+        &.next{
+          right: 10%;
+        }
+        &.prev{
+          left: 10%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 924px) {
+  .reviews {
+    .container {
+      .carousel-button{
+        &.next{
+          right: 5%;
+        }
+        &.prev{
+          left: 5%;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 700px) {
   .reviews {
     .container {
+      .carousel-button{
+        &.next{
+          right: 0%;
+        }
+        &.prev{
+          left: 0%;
+        }
+      }
       .scroll-container {
         width: unset;
         .review-container {

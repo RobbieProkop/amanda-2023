@@ -29,12 +29,12 @@
 
       &.prev {
         transform: translateY(-50%) rotate(180deg);
-        left: 0;
+        left: 5%;
         margin-left: 0.5rem;
       }
 
       &.next {
-        right: 0;
+        right: 5%;
         margin-right: 0.5rem;
       }
 
@@ -137,9 +137,14 @@
     .container {
       .carousel-button {
         font-size: 2rem;
-        &.left {
-          margin: 0;
+        &.prev {
+          left: 0;
+          
         }
+        &.next{
+          right: 0;
+        }
+        
       }
       .carousel {
         --items-per-screen: 1;
