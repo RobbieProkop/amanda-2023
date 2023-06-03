@@ -9,8 +9,8 @@ const reviews = await Astro.glob("../helpers/reviews/*.md");
 <section class="reviews">
   <div class="container">
     <h2>Kind Words</h2>
-    <button class="carousel-button prev" id="prev">&#10140;</button>
-    <button class="carousel-button next" id="next">&#10140;</button>
+    <button class="carousel-button prev" id="prevRev">&#10140;</button>
+    <button class="carousel-button next" id="nextRev">&#10140;</button>
     <div class="overlay" id="review-overlay">
       <div class="scroll-container" id="scroll-container">
         {
@@ -53,8 +53,8 @@ const reviews = await Astro.glob("../helpers/reviews/*.md");
   // ) as NodeListOf<Element>;
   // const progress = document.getElementById("review-progress") as HTMLElement;
   const overlay = document.getElementById("review-overlay") as HTMLElement;
-  const nextBtn = document.getElementById("next") as HTMLElement;
-  const prevBtn = document.getElementById("prev") as HTMLElement;
+  const nextBtn = document.getElementById("nextRev") as HTMLElement;
+  const prevBtn = document.getElementById("prevRev") as HTMLElement;
 
   //touch elements
   let isDragging = false;
