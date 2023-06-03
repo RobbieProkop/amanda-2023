@@ -4,6 +4,7 @@ import "../styles/about.scss";
 export interface Props {
   page?: string;
   background?: boolean;
+
   image: string;
 }
 
@@ -15,10 +16,16 @@ const homepage = page === "homepage";
 <section class={background ? "about background" : "about"}>
   <div class="container">
     <div class="image">
-      <img src={image} alt="Amanda-Headshot" loading="eager" />
+      <img
+        src={image}
+        alt="Amanda-Headshot"
+        loading="eager"
+        width="319px"
+        height="479px"
+      />
     </div>
     <div class="text">
-      <h2>About Me <span>(She/Her)</span></h2>
+      <h2>About Me <span class={homepage ? "hidden" : ""}>(She/Her)</span></h2>
       {
         homepage ? (
           <>

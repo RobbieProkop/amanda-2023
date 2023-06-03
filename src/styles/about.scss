@@ -26,7 +26,7 @@
         color: $third;
         font-size: 36px;
         span {
-          font-size: 1.2rem;
+          font-size: 1rem;
         }
       }
 
@@ -62,7 +62,7 @@
     }
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 355px) {
   .about {
     .container {
       .image {
