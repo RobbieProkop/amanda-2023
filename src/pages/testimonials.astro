@@ -1,0 +1,35 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/testimonials.scss";
+const reviews = await Astro.glob("../helpers/reviews/*.md");
+---
+
+<Layout title="Testimonials">
+  <Hero
+    title="Testimonials"
+    color="orange"
+    image="assets/webp/servicesHero.webp"
+    overlay={true}
+  />
+  <section class="testimonials">
+    <div class="container">
+      {
+        reviews.map((review) => {
+          const { Content, frontmatter } = review;
+
+          return (
+            <>
+              <article class="review-container">
+                <div class="review-item">
+                  <Content />
+                  <h3>{frontmatter.name}</h3>
+                </div>
+              </article>
+            </>
+          );
+        })
+      }
+    </div>
+  </section>
+</Layout>
