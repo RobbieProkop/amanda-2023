@@ -78,9 +78,11 @@
           margin-right: 5rem;
         }
         img {
-          width: 100%;
+          max-width: 100%;
           aspect-ratio: 3/4;
           border-radius: 5px;
+          max-height: 90vh;
+
         }
         .card-content {
           @include flex-between();
