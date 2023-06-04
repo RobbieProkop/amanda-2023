@@ -14,12 +14,52 @@
       color: $secondary;
     }
 
+    .carousel-button {
+      position: absolute;
+      @include flex-center();
+      z-index: 500;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      background-color: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.5);
+      border-radius: 0.25rem;
+      padding: 0 0.5rem;
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
+
+      &.prev {
+        transform: translateY(-50%) rotate(180deg);
+        left: 20%;
+        margin-left: 0.5rem;
+      }
+
+      &.next {
+        right: 20%;
+        margin-right: 0.5rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      &:focus {
+        outline: 1px solid #333;
+      }
+    }
+
     .overlay {
       width: 100%;
     }
 
     button {
       background-color: $secondary;
+
+      &:hover {
+        background-color: $third;
+      }
     }
 
     .scroll-container {
@@ -48,10 +88,22 @@
           background-color: rgba(186, 157, 47, 0.2);
           border-radius: 25px;
           padding: 3rem;
+          
           p {
             margin-bottom: 2rem;
           }
         }
+      }
+    }
+
+    .read-more {
+      margin-top: 2rem;
+      color: $secondary;
+      transition: color 0.2s ease-in-out;
+      font-weight: 500;
+      text-decoration: underline;
+      &:hover{
+        color: $third;
       }
     }
     .progress-bar {
@@ -78,9 +130,46 @@
   }
 }
 
+@media screen and (max-width: 1230px) {
+  .reviews {
+    .container {
+      .carousel-button{
+        &.next{
+          right: 10%;
+        }
+        &.prev{
+          left: 10%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 924px) {
+  .reviews {
+    .container {
+      .carousel-button{
+        &.next{
+          right: 5%;
+        }
+        &.prev{
+          left: 5%;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 700px) {
   .reviews {
     .container {
+      .carousel-button{
+        &.next{
+          right: 0%;
+        }
+        &.prev{
+          left: 0%;
+        }
+      }
       .scroll-container {
         width: unset;
         .review-container {
@@ -88,6 +177,30 @@
             width: 500px;
             height: 450px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .reviews{
+    .container{
+      .carousel-button {
+        font-size: 2rem;
+        color: rgba(0,0,0,0.4);
+        background-color: unset;
+        &.left {
+          margin: 0;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: rgba(0,0,0,0.4);
+          background-color: transparent;
+        }
+        &:focus {
+          outline: none
         }
       }
     }
@@ -111,6 +224,9 @@
 @media screen and (max-width: 400px) {
   .reviews {
     .container {
+      .carousel-button {
+        padding: 0;
+      }
       .scroll-container {
         .review-container {
           .review-item {
@@ -121,4 +237,14 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 300px) {
+  .reviews {
+    .container {
+      .scroll-container {
+        .review-container {
+          .review-item {
+            height: 700px;
+          }}}}}
 }

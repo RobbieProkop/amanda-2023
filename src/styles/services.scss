@@ -30,12 +30,12 @@
       &.prev {
         transform: translateY(-50%) rotate(180deg);
         left: 0;
-        margin-left: 0.5rem;
+        // margin-left: 0.5rem;
       }
 
       &.next {
         right: 0;
-        margin-right: 0.5rem;
+        // margin-right: 0.5rem;
       }
 
       &:hover {
@@ -52,7 +52,7 @@
     }
     .carousel {
       display: flex;
-      width: calc(100% - 2 * 5rem);
+      // width: calc(100% - 2 * 5rem);
       --carousel-index: 0;
       --items-per-screen: 3;
       transform: translateX(calc(var(--carousel-index) * -100%));
@@ -78,9 +78,11 @@
           margin-right: 5rem;
         }
         img {
-          width: 100%;
+          max-width: 100%;
           aspect-ratio: 3/4;
           border-radius: 5px;
+          max-height: 90vh;
+
         }
         .card-content {
           @include flex-between();
@@ -137,9 +139,14 @@
     .container {
       .carousel-button {
         font-size: 2rem;
-        &.left {
-          margin: 0;
+        &.prev {
+          left: 0;
+          
         }
+        &.next{
+          right: 0;
+        }
+        
       }
       .carousel {
         --items-per-screen: 1;

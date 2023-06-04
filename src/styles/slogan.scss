@@ -1,0 +1,26 @@
+@import "variables";
+
+.slogan{
+  @include flex-center();
+  // height: 300px;
+  // background-color: $background-blue;
+  padding: 3.5rem 0 2rem;
+  // min-height: 50vh;
+  
+  .slogan-container{
+    max-width: 1000px;
+    // margin-top: 5rem;
+    padding: 5rem 2rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+  h3 {
+    font-family: $secondary-font;
+    font-size: 2rem;
+  } 
+}
+
+@media screen and (max-width: 650px) {
+
+}

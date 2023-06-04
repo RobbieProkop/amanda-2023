@@ -118,6 +118,18 @@
     }
   }
 }
+@media screen and (max-height: 696px) {
+  .hero {
+    height: 80vh;
+    .container {
+      .logo-container {
+        img {
+          max-width: 20rem;
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 428px) {
   .hero {
@@ -139,19 +151,6 @@
       .logo-container {
         img {
           max-width: 15rem;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-height: 696px) {
-  .hero {
-    height: 80vh;
-    .container {
-      .logo-container {
-        img {
-          max-width: 20rem;
         }
       }
     }

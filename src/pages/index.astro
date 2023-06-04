@@ -4,10 +4,12 @@ import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import ServicesSection from "../components/ServicesSection.astro";
 import Reviews from "../components/Reviews.astro";
+import Slogan from "../components/Slogan.astro";
 ---
 
-<Layout title="Amanda Prokop RMT">
+<Layout title="Amanda Prokop RMT - Home">
   <!-- Hero -->
+  <h1 style="display: none">Amanda Prokop RMT - Home</h1>
   <Hero
     title="Amanda Prokop Message Therapy"
     page="homepage"
@@ -15,6 +17,9 @@ import Reviews from "../components/Reviews.astro";
     image="/assets/webp/homepageHero.webp"
     overlay={true}
   />
+
+  <!-- SLogan -->
+  <Slogan />
 
   <!-- ServicesSection -->
   <ServicesSection />
