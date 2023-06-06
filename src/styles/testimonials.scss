@@ -11,14 +11,14 @@
 
       .review-container {
         @include flex-center();
-        max-width: 600px;
+        max-width: 800px;
         margin: auto;
         flex-direction: column;
 
         .review-item {
           @include flex-center();
           flex-direction: column;
-          max-width: 600px;
+          max-width: 800px;
           margin-bottom: 2.5rem;
           border-bottom: 1px solid black;
 
