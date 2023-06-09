@@ -17,7 +17,6 @@ const reviews = await Astro.glob("../helpers/reviews/*.md");
           reviews.map((review, index) => {
             const { Content, frontmatter } = review;
             if (index >= 5) {
-              console.log("over");
               return;
             } else {
               return (
