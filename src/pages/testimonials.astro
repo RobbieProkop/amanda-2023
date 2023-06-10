@@ -2,16 +2,12 @@
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/testimonials.scss";
+import hero from "/assets/originals/testimonials2.jpeg";
 const reviews = await Astro.glob("../helpers/reviews/*.md");
 ---
 
 <Layout title="Testimonials">
-  <Hero
-    title="Testimonials"
-    color="orange"
-    image="assets/originals/testimonials2.jpeg"
-    overlay={true}
-  />
+  <Hero title="Testimonials" color="orange" image={hero} overlay={true} />
   <section class="testimonials">
     <div class="container">
       {
