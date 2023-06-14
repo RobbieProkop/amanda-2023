@@ -4,9 +4,11 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/testimonials.scss";
 import hero from "/assets/webp/testimonials2.webp";
 const reviews = await Astro.glob("../helpers/reviews/*.md");
+
+const description = "Read what others have said about Amanda Prokop."
 ---
 
-<Layout title="Testimonials">
+<Layout title="Testimonials" description={description}>
   <Hero title="Testimonials" color="orange" image={hero} overlay={true} />
   <section class="testimonials">
     <div class="container">
