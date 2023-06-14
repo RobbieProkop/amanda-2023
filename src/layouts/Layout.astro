@@ -5,9 +5,10 @@ import "../styles/global.scss";
 
 export interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "Amanda Prokop RMT" } = Astro.props;
+const { title = "Amanda Prokop RMT", description = "Amanda is a Registered Massage Therapist in Bankview, Calgary. Book your next appointment now!" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,6 +16,9 @@ const { title = "Amanda Prokop RMT" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Massage, Trauma informed massage, Registered Massage Therapist, Massage in Calgary, RMT, Calgary Massage" />
+    
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
