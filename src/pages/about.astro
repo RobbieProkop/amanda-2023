@@ -7,9 +7,10 @@ import "../styles/map.scss";
 import "leaflet/dist/leaflet.css";
 
 const location = { latitude: 51.0317, longitude: -114.10072 };
+const description = "I approach massage with a trauma-informed perspective, creating a safe environment essential to my practice. Through compassionate touch, I help clients reconnect with their bodies for lasting change. Customized treatments support healing journeys, rooted in empathy and understanding trauma's impact."
 ---
 
-<Layout title="About">
+<Layout title="About" description={description}>
   <!-- Hero -->
   <Hero title="About" color="orange" image="/assets/webp/aboutHero.webp" />
   <!-- About -->
