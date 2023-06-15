@@ -28,8 +28,8 @@ import "../styles/header.scss";
     >
   </ul>
   <label for="hamberger-menu" class="hidden"></label>
-  <input id="open-menu" class="toggler hidden" type="checkbox" />
-  <div id="hamberger" class="hamberger hidden"><div></div></div>
+  <input id="open-menu" class="toggler " type="checkbox" />
+  <div id="hamberger" class="hamberger "><div></div></div>
 
   <div id="mobile-menu" class="menu">
     <ul>
@@ -59,39 +59,7 @@ import "../styles/header.scss";
     home.forEach((homeBtn) => homeBtn.classList.add("hidden"));
   }
 
-  //check initial window size
-  if (window.innerWidth <= 650) {
-    open.classList.remove("hidden");
-    hamberger.classList.remove("hidden");
-    desktopMenu.classList.add("hidden");
-  }
-
-  //resize function
-  const resize = () => {
-    if (window.innerWidth <= 650) {
-      open.classList.remove("hidden");
-      hamberger.classList.remove("hidden");
-      desktopMenu.classList.add("hidden");
-      return;
-    }
-    open.classList.add("hidden");
-    // open.checked= false;
-    // mobileMenu.classList.add("hidden");
-    hamberger.classList.add("hidden");
-    desktopMenu.classList.remove("hidden");
-  };
-  //call the resize funciton on window resize
-  window.addEventListener("resize", () => resize());
-
-  open.addEventListener("click", () => {
-    // open.classList.toggle("active")
-    // hamberger.classList.toggle("active")
-    // mobileMenu.classList.toggle("hidden");
-  });
   hamberger.addEventListener("click", () => {
     open.checked = !open.checked;
-    // open.classList.toggle("active")
-    // hamberger.classList.toggle("active")
-    // mobileMenu.classList.toggle("hidden");
   });
 </script>
