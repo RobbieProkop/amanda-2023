@@ -1,16 +1,9 @@
 @import "variables";
 
-@mixin flex-center() {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .header {
-  @include flex-center();
+  @include flex-between();
   background-color: $primary;
   height: 77px;
-  justify-content: space-between;
   z-index: 1000;
   position: sticky;
   top: 0;
@@ -27,7 +20,6 @@
 
   .flex-right {
     @include flex-center();
-
     flex-direction: row;
 
     .item {
