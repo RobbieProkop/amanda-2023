@@ -13,7 +13,7 @@ const {
   description = "Amanda is a Registered Massage Therapist in Bankview, Calgary. Book your next appointment now!",
 } = Astro.props;
 
-const image = "/assets/APPrimaryOrange.webp";
+const image = "/assets/webp/APPrimaryOrange.webp";
 ---
 
 <!DOCTYPE html>
@@ -32,14 +32,14 @@ const image = "/assets/APPrimaryOrange.webp";
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/assets/APPrimaryOrange.webp" />
+    <meta property="og:image" content={image} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/assets/APPrimaryOrange.webp" />
+    <meta property="twitter:image" content={image} />
 
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
