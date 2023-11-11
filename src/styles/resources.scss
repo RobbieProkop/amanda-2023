@@ -1,0 +1,17 @@
+@import "variables";
+
+.resourceGroup {
+  margin: 3rem;
+
+  li {
+    list-style: disc;
+    margin-left: 2rem;
+
+    a {
+      transition: color 0.2s ease-in-out;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

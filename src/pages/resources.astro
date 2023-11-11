@@ -1,0 +1,47 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/resources.scss";
+
+const description = "Resources for the community";
+---
+
+<Layout title="Resources" description={description}>
+  <Hero title="Resources" color="orange" image=" /assets/webp/aboutHero.webp" />
+
+  <section class="container">
+    <div class="resourceGroup">
+      <h2>Psychologist</h2>
+      <ul>
+        <li>
+          <a href="https://yuliprokop.com" target="_blank"
+            >Yuli Prokop - Psychedelic Assisted Psychotherapy & 2 hour
+            Psychotherapy</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="resourceGroup">
+      <h2>Acupuncture</h2>
+      <ul>
+        <li>
+          <a href="https://yuliprokop.com" target="_blank"
+            >Yuli Prokop - Psychedelic Assisted Psychotherapy & 2 hour
+            Psychotherapy</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="resourceGroup">
+      <h2>Craniosacral</h2>
+      <ul>
+        <li>
+          <a href="https://yuliprokop.com" target="_blank"
+            >Yuli Prokop - Psychedelic Assisted Psychotherapy & 2 hour
+            Psychotherapy</a
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+</Layout>
