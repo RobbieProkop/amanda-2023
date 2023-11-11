@@ -3,12 +3,21 @@
 .resourceGroup {
   margin: 3rem;
 
+  h2 {
+    margin-bottom: 1rem;
+  }
+
   li {
     list-style: disc;
     margin-left: 2rem;
 
     a {
       transition: color 0.2s ease-in-out;
+
+      span {
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
       &:hover {
         color: $primary;
       }
