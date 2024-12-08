@@ -4,12 +4,14 @@ import insta from "/assets/icons/insta.png";
 import envelope from "/assets/icons/envelope.png";
 import telephone from "/assets/icons/telephone.png";
 import "../styles/footer.scss";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="container">
     <div class="left">
-      <p>COPYRIGHT 2023</p>
+      <p>COPYRIGHT {currentYear}</p>
       <p class="dhamma">
         Made by <a href="https://dhammadevs.com">DhammaDevs</a>
       </p>
